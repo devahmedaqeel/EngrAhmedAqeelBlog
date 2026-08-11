@@ -42,6 +42,7 @@ const Base = ({
         {/* Primary Meta */}
         <meta name="description" content={pageDesc} />
         <meta name="author" content={meta_author} />
+        <meta name="google-site-verification" content="google8bac3146ca63224c" />
 
         {/* Open Graph */}
         <meta property="og:title" content={pageTitle} />
