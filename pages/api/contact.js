@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   const smtpPort = parseInt(process.env.SMTP_PORT || "587");
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
-  const toEmail = process.env.CONTACT_TO_EMAIL || process.env.SMTP_USER || "ahmedaqeel.official@gmail.com";
+  const toEmail = process.env.CONTACT_TO_EMAIL || process.env.SMTP_USER || "engrahmedaqeel14@gmail.com";
 
   // If SMTP user & pass are provided, send via Nodemailer
   if (smtpUser && smtpPass) {
