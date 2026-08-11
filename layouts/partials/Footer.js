@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <Logo />
-            <p className="mt-3 text-xs leading-relaxed text-text dark:text-darkmode-text max-w-[230px]" style={{ textAlign: "justify" }}>
+            <p className="mt-3 text-xs leading-relaxed text-text dark:text-darkmode-text max-w-[230px]">
               {footer_content}
             </p>
             <Social source={social} className="socials mt-4" />
@@ -52,7 +52,7 @@ const Footer = () => {
             <h5 className="mb-3 text-[10px] font-black uppercase tracking-[0.15em] text-dark dark:text-darkmode-light">
               Work Together
             </h5>
-            <p className="text-xs leading-relaxed text-text dark:text-darkmode-text mb-4" style={{ textAlign: "justify" }}>
+            <p className="text-xs leading-relaxed text-text dark:text-darkmode-text mb-4">
               Have a project in mind? Let&apos;s build something great together.
             </p>
             <Link href="/contact" className="btn btn-primary btn-sm text-xs">

@@ -74,7 +74,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "React & Next.js",
       color: "#61DAFB",
       bg: "rgba(97,218,251,0.15)",
-      pos: "top-4 -left-2 sm:-left-4 lg:-left-6",
+      pos: "top-2 left-0 sm:top-4 sm:-left-4 lg:-left-6",
       anim: "animate-float",
       delay: "0s",
     },
@@ -83,7 +83,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Node.js",
       color: "#339933",
       bg: "rgba(51,153,51,0.15)",
-      pos: "top-[26%] -left-3 sm:-left-6 lg:-left-8",
+      pos: "top-[26%] left-0 sm:-left-6 lg:-left-8",
       anim: "animate-float-reverse",
       delay: "0.4s",
     },
@@ -92,7 +92,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "MongoDB",
       color: "#47A248",
       bg: "rgba(71,162,72,0.15)",
-      pos: "top-[48%] -left-3 sm:-left-6 lg:-left-8",
+      pos: "top-[48%] left-0 sm:-left-6 lg:-left-8",
       anim: "animate-float",
       delay: "0.8s",
     },
@@ -101,7 +101,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Tailwind CSS",
       color: "#06B6D4",
       bg: "rgba(6,182,212,0.15)",
-      pos: "top-[70%] -left-2 sm:-left-4 lg:-left-6",
+      pos: "top-[70%] left-0 sm:-left-4 lg:-left-6",
       anim: "animate-float-reverse",
       delay: "1.2s",
     },
@@ -112,7 +112,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "AI / Gemini",
       color: "#8B5CF6",
       bg: "rgba(139,92,246,0.15)",
-      pos: "top-4 -right-2 sm:-right-4 lg:-right-6",
+      pos: "top-2 right-0 sm:top-4 sm:-right-4 lg:-right-6",
       anim: "animate-float-reverse",
       delay: "0.2s",
     },
@@ -121,7 +121,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Python",
       color: "#3776AB",
       bg: "rgba(55,118,171,0.15)",
-      pos: "top-[26%] -right-3 sm:-right-6 lg:-right-8",
+      pos: "top-[26%] right-0 sm:-right-6 lg:-right-8",
       anim: "animate-float",
       delay: "0.6s",
     },
@@ -130,7 +130,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Docker",
       color: "#2496ED",
       bg: "rgba(36,150,237,0.15)",
-      pos: "top-[48%] -right-3 sm:-right-6 lg:-right-8",
+      pos: "top-[48%] right-0 sm:-right-6 lg:-right-8",
       anim: "animate-float-reverse",
       delay: "1.0s",
     },
@@ -139,7 +139,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "React Native",
       color: "#F43F5E",
       bg: "rgba(244,63,94,0.15)",
-      pos: "top-[70%] -right-2 sm:-right-4 lg:-right-6",
+      pos: "top-[70%] right-0 sm:-right-4 lg:-right-6",
       anim: "animate-float",
       delay: "1.4s",
     },
@@ -148,7 +148,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
   return (
     <Base>
       {/* ════════════════════════════ HERO ════════════════════════════ */}
-      <section className="relative overflow-hidden" style={{ minHeight: "92vh", display: "flex", alignItems: "center" }}>
+      <section className="relative overflow-hidden py-8 sm:py-12 lg:py-16" style={{ minHeight: "auto" }}>
         <div className="gradient-mesh pointer-events-none absolute inset-0 -z-10" />
 
         {/* Orbs */}

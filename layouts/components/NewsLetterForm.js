@@ -35,7 +35,7 @@ function CustomForm({ status, message, onValidated }) {
     return re.test(val.trim());
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMsg("");
 
@@ -51,25 +51,31 @@ function CustomForm({ status, message, onValidated }) {
 
     setSubmitting(true);
 
-    if (onValidated) {
-      onValidated({ EMAIL: email.trim() });
-    }
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
 
-    setTimeout(() => {
-      try {
-        localStorage.setItem("subscribed_email", email.trim());
-        const list = JSON.parse(localStorage.getItem("subscribers_list") || "[]");
-        if (!list.includes(email.trim())) {
-          list.push(email.trim());
-          localStorage.setItem("subscribers_list", JSON.stringify(list));
+      const resData = await response.json();
+
+      if (response.ok && resData.success) {
+        try {
+          localStorage.setItem("subscribed_email", email.trim());
+        } catch (err) {
+          // ignore
         }
-      } catch (err) {
-        // ignore
+        setSubmitting(false);
+        setSubmitted(true);
+      } else {
+        setSubmitting(false);
+        setErrorMsg(resData.error || "Failed to subscribe. Please try again.");
       }
-
+    } catch (err) {
       setSubmitting(false);
-      setSubmitted(true);
-    }, 600);
+      setErrorMsg("Failed to subscribe. Please try again.");
+    }
   };
 
   const handleReset = () => {

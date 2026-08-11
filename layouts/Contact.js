@@ -32,7 +32,7 @@ const Contact = ({ data }) => {
     if (errorMsg) setErrorMsg("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMsg("");
 
@@ -43,10 +43,26 @@ const Contact = ({ data }) => {
 
     setSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const resData = await response.json();
+
+      if (response.ok && resData.success) {
+        setSubmitting(false);
+        setSubmitted(true);
+      } else {
+        setSubmitting(false);
+        setErrorMsg(resData.error || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
       setSubmitting(false);
-      setSubmitted(true);
-    }, 700);
+      setErrorMsg("Failed to send message. Please check your internet connection and try again.");
+    }
   };
 
   const handleReset = () => {

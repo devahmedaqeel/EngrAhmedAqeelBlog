@@ -76,7 +76,7 @@ const Post = ({ post, featured = false }) => {
         </h3>
 
         {/* Excerpt */}
-        <p className="mb-4 flex-1 text-xs leading-relaxed text-text dark:text-darkmode-text line-clamp-3" style={{ textAlign: "justify" }}>
+        <p className="mb-4 flex-1 text-xs leading-relaxed text-text dark:text-darkmode-text line-clamp-3">
           {excerpt}{excerpt.length >= Number(summary_length) ? "…" : ""}
         </p>
 

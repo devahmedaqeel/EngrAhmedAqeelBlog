@@ -29,6 +29,7 @@ const Base = ({
       <Head>
         <title>{pageTitle}</title>
         <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {/* Favicon */}
         {favicon && <link rel="icon" href={favicon} />}
