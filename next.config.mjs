@@ -18,6 +18,14 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Rewrites for dynamic RSS and JSON feeds
+  async rewrites() {
+    return [
+      { source: "/rss.xml", destination: "/api/rss" },
+      { source: "/feed.xml", destination: "/api/rss" },
+      { source: "/feed.json", destination: "/api/feed" },
+    ];
+  },
   // HTTP headers for caching static assets
   async headers() {
     return [
