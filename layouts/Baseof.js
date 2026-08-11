@@ -60,11 +60,43 @@ const Base = ({
         <meta name="twitter:description" content={pageDesc} />
         <meta name="twitter:image" content={pageImage} />
 
+        {/* GEO Location Meta Tags */}
+        <meta name="geo.region" content="PK-JK" />
+        <meta name="geo.placename" content="Kotli, Azad Jammu and Kashmir, Pakistan" />
+        <meta name="geo.position" content="33.5156;73.9019" />
+        <meta name="ICBM" content="33.5156, 73.9019" />
+
+        {/* Schema.org Person & Local Business JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Engr. Ahmed Aqeel",
+              "jobTitle": "Full Stack AI Developer & Software Engineer",
+              "url": "https://engr-ahmed-aqeel-blog.vercel.app",
+              "image": "https://engr-ahmed-aqeel-blog.vercel.app/images/author-light.png",
+              "sameAs": [
+                "https://github.com/devahmedaqeel",
+                "https://linkedin.com/in/devahmedaqeel"
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Kotli",
+                "addressRegion": "Azad Jammu & Kashmir",
+                "addressCountry": "Pakistan"
+              }
+            }),
+          }}
+        />
+
         {/* Performance: Preload hero image */}
         <link rel="preload" href="/images/author-light.png" as="image" />
         <link rel="preload" href="/images/author-dark.png" as="image" />
 
-        {/* RSS Auto-Discovery */}
+        {/* RSS & Sitemap Auto-Discovery */}
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="alternate" type="application/rss+xml" title={`${pageTitle} RSS Feed`} href="/rss.xml" />
         <link rel="alternate" type="application/json" title={`${pageTitle} JSON Feed`} href="/feed.json" />
       </Head>
