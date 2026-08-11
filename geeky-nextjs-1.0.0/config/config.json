@@ -1,0 +1,60 @@
+{
+  "site": {
+    "title": "Engr. Ahmed Aqeel | Full Stack AI Developer & Software Engineer",
+    "base_url": "/",
+    "favicon": "/images/favicon.png",
+    "logo": "",
+    "logo_white": "",
+    "logo_width": "180",
+    "logo_height": "39",
+    "logo_text": "Engr. Ahmed Aqeel"
+  },
+  "settings": {
+    "theme_switcher": true,
+    "default_theme": "system",
+    "pagination": 6,
+    "InnerPaginationOptions": {
+      "enableTop": false,
+      "enableBottom": true
+    },
+    "summary_length": 200,
+    "blog_folder": "posts"
+  },
+  "params": {
+    "tag_manager_id": "",
+    "footer_content": "Full Stack AI Developer and Software Engineer who designs and ships complete digital products — from web & mobile frontends to scalable APIs and AI-powered backends.",
+    "copyright": "Engr. Ahmed Aqeel © 2026. All rights reserved."
+  },
+  "metadata": {
+    "meta_author": "Engr. Ahmed Aqeel",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Engr. Ahmed Aqeel - Full Stack AI Developer & Software Engineer Portfolio. Founder of DevOrbit Tech."
+  },
+  "widgets": {
+    "about": {
+      "enable": true,
+      "content": "Full Stack AI Developer & Software Engineer. Founder of DevOrbit Tech, building web, mobile, and AI solutions."
+    },
+    "featured_posts": {
+      "enable": true,
+      "title": "Project Categories",
+      "showPost": 3
+    },
+    "categories": {
+      "enable": true,
+      "title": "Project Categories"
+    },
+    "newsletter": {
+      "enable": true,
+      "title": "Stay Connected",
+      "content": "Subscribe to get updates on my latest AI projects, software developments, and tech insights.",
+      "privacy_policy_page": "#",
+      "malichipm_url": ""
+    }
+  },
+  "disqus": {
+    "enable": false,
+    "shortname": "themefisher-template",
+    "settings": {}
+  }
+}

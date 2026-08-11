@@ -1,0 +1,35 @@
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-bold tracking-wide transition-all duration-200 focus:outline-none;
+  &:focus { box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2); }
+}
+
+.btn-primary {
+  @apply border-transparent text-white;
+  background: linear-gradient(135deg, #6C63FF, #8B5CF6);
+  box-shadow: 0 2px 12px rgba(108, 99, 255, 0.28);
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+  }
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(108, 99, 255, 0.22);
+  }
+}
+
+.btn-outline-primary {
+  @apply bg-transparent text-primary;
+  border-color: rgba(108, 99, 255, 0.35);
+  &:hover {
+    @apply text-white;
+    background: linear-gradient(135deg, #6C63FF, #8B5CF6);
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.32);
+    transform: translateY(-1px);
+  }
+  &:active { transform: translateY(0); }
+}
+
+.btn-sm {
+  @apply px-3.5 py-1.5 text-xs rounded-lg gap-1.5;
+}
