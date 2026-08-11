@@ -24,10 +24,16 @@ export default async function handler(req, res) {
 
     // Get SMTP Configuration
     const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
-    const smtpPort = parseInt(process.env.SMTP_PORT || "587");
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-    const toEmail = process.env.CONTACT_TO_EMAIL || process.env.SMTP_USER || "engrahmedaqeel14@gmail.com";
+    const smtpPort = parseInt(process.env.SMTP_PORT || "465");
+    let smtpUser = process.env.SMTP_USER || "engrahmedaqeel14@gmail.com";
+    if (smtpUser.includes("engrahmedaqeel4@gmail.com")) {
+      smtpUser = "engrahmedaqeel14@gmail.com";
+    }
+    const smtpPass = process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, "") : "";
+    let toEmail = process.env.CONTACT_TO_EMAIL || smtpUser || "engrahmedaqeel14@gmail.com";
+    if (toEmail.includes("engrahmedaqeel4@gmail.com")) {
+      toEmail = "engrahmedaqeel14@gmail.com";
+    }
 
     // If Nodemailer is configured
     if (smtpUser && smtpPass) {
