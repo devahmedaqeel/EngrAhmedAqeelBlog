@@ -1,6 +1,6 @@
 ---
 title: "MediReport AI - Intelligent Medical Lab Report Analyzer"
-date: 2024-06-15T00:00:00Z
+date: 2026-08-01T00:00:00Z
 image: /images/post/medireport-ai.png
 categories: ["ai-ml", "mobile-apps"]
 featured: true

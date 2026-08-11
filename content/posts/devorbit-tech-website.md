@@ -1,6 +1,6 @@
 ---
 title: "DevOrbit Tech Studio Website"
-date: 2023-12-01T00:00:00Z
+date: 2026-03-01T00:00:00Z
 image: /images/post/devorbit-tech-website.png
 categories: ["studio", "web-development"]
 featured: false

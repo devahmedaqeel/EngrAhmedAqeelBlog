@@ -1,6 +1,6 @@
 ---
 title: "Organization Finance Management System (Final Year Project)"
-date: 2024-03-20T00:00:00Z
+date: 2026-05-10T00:00:00Z
 image: /images/post/organization-finance-management-system.png
 categories: ["web-development", "fullstack"]
 featured: true

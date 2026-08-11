@@ -1,6 +1,6 @@
 ---
 title: "MenuCloud - Digital Restaurant Menu & Ordering Platform"
-date: 2024-04-01T00:00:00Z
+date: 2026-06-15T00:00:00Z
 image: /images/post/menu-cloud.png
 categories: ["web-development", "fullstack"]
 featured: true

@@ -1,6 +1,6 @@
 ---
 title: "Personal Developer Portfolio Website"
-date: 2023-11-15T00:00:00Z
+date: 2026-01-15T00:00:00Z
 image: /images/post/personal-portfolio-website.png
 categories: ["portfolio", "web-development"]
 featured: false

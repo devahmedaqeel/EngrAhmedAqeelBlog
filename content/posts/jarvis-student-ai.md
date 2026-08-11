@@ -1,6 +1,6 @@
 ---
 title: "JARVIS Student AI - AI Study Productivity Companion"
-date: 2024-05-10T00:00:00Z
+date: 2026-07-20T00:00:00Z
 image: /images/post/jarvis-student-ai.png
 categories: ["ai-ml", "mobile-apps"]
 featured: true

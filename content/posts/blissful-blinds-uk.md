@@ -1,6 +1,6 @@
 ---
 title: "Blissful Blinds UK - Client Business E-Commerce Site"
-date: 2024-01-10T00:00:00Z
+date: 2026-08-10T00:00:00Z
 image: /images/post/blissful-blinds-uk.png
 categories: ["client-work", "web-development"]
 featured: true

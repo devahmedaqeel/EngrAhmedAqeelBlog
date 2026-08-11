@@ -1,6 +1,6 @@
 ---
 title: "GiftyGo - AI Gift Recommendation & Discovery Engine"
-date: 2024-02-15T00:00:00Z
+date: 2026-04-05T00:00:00Z
 image: /images/post/gifty-go.png
 categories: ["ai-ml", "web-development"]
 featured: true
