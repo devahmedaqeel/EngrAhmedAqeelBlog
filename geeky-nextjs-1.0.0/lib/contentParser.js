@@ -5,9 +5,13 @@ import path from "path";
 
 // get list page data, ex: _index.md
 export const getListPage = async (filePath) => {
-  const pageData = fs.readFileSync(filePath, "utf-8");
+  const absolutePath = path.isAbsolute(filePath)
+    ? filePath
+    : path.join(process.cwd(), filePath);
+  const pageData = fs.readFileSync(absolutePath, "utf-8");
   const pageDataParsed = matter(pageData);
-  const notFoundPage = fs.readFileSync("content/404.md", "utf-8");
+  const notFoundPath = path.join(process.cwd(), "content/404.md");
+  const notFoundPage = fs.readFileSync(notFoundPath, "utf-8");
   const notFoundDataParsed = matter(notFoundPage);
   let frontmatter, content;
 
@@ -29,14 +33,17 @@ export const getListPage = async (filePath) => {
 
 // get all single pages, ex: blog/post.md
 export const getSinglePage = (folder) => {
-  const filesPath = fs.readdirSync(folder);
+  const dirPath = path.isAbsolute(folder)
+    ? folder
+    : path.join(process.cwd(), folder);
+  const filesPath = fs.readdirSync(dirPath);
   const sanitizeFiles = filesPath.filter((file) => file.endsWith(".md"));
   const filterSingleFiles = sanitizeFiles.filter((file) =>
     file.match(/^(?!_)/)
   );
   const singlePages = filterSingleFiles.map((filename) => {
     const slug = filename.replace(".md", "");
-    const pageData = fs.readFileSync(path.join(folder, filename), "utf-8");
+    const pageData = fs.readFileSync(path.join(dirPath, filename), "utf-8");
     const pageDataParsed = matter(pageData);
     const frontmatterString = JSON.stringify(pageDataParsed.data);
     const frontmatter = JSON.parse(frontmatterString);
@@ -60,7 +67,8 @@ export const getSinglePage = (folder) => {
 export const getRegularPage = async (slug) => {
   const publishedPages = getSinglePage("content");
   const pageData = publishedPages.filter((data) => data.slug === slug);
-  const notFoundPage = fs.readFileSync("content/404.md", "utf-8");
+  const notFoundPath = path.join(process.cwd(), "content/404.md");
+  const notFoundPage = fs.readFileSync(notFoundPath, "utf-8");
   const notFoundDataParsed = matter(notFoundPage);
 
   let frontmatter, content;
@@ -79,3 +87,4 @@ export const getRegularPage = async (slug) => {
     mdxContent,
   };
 };
+
