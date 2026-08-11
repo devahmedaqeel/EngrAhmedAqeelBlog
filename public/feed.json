@@ -1,0 +1,68 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Engr. Ahmed Aqeel | Full Stack AI Developer & Software Engineer",
+  "home_page_url": "https://ahmedaqeelportfolio.vercel.app",
+  "feed_url": "https://ahmedaqeelportfolio.vercel.app/feed.json",
+  "description": "Engr. Ahmed Aqeel - Full Stack AI Developer & Software Engineer Portfolio. Founder of DevOrbit Tech.",
+  "author": {
+    "name": "Engr. Ahmed Aqeel"
+  },
+  "items": [
+    {
+      "id": "https://ahmedaqeelportfolio.vercel.app/posts/blissful-blinds-uk",
+      "url": "https://ahmedaqeelportfolio.vercel.app/posts/blissful-blinds-uk",
+      "title": "Blissful Blinds UK - Client Business E-Commerce Site",
+      "summary": "Blissful Blinds UK is a full-featured commercial website engineered for a UK-based business client, complete with custom quote forms, automated business email, customer reviews, chatbot integration, and technical SEO optimizations. Tech Stack & Technologies - Frontend & Web: Reac",
+      "date_published": "2024-01-10T00:00:00.000Z"
+    },
+    {
+      "id": "https://ahmedaqeelportfolio.vercel.app/posts/devorbit-tech-website",
+      "url": "https://ahmedaqeelportfolio.vercel.app/posts/devorbit-tech-website",
+      "title": "DevOrbit Tech Studio Website",
+      "summary": "DevOrbit Tech Website is the official agency platform for DevOrbit Tech, founded by Engr. Ahmed Aqeel. It showcases full-stack web and mobile application development, AI solution architecture, graphic design services, and final-year project consultations. Tech Stack & Technologie",
+      "date_published": "2023-12-01T00:00:00.000Z"
+    },
+    {
+      "id": "https://ahmedaqeelportfolio.vercel.app/posts/gifty-go",
+      "url": "https://ahmedaqeelportfolio.vercel.app/posts/gifty-go",
+      "title": "GiftyGo - AI Gift Recommendation & Discovery Engine",
+      "summary": "GiftyGo is an AI recommendation platform that generates tailored gift suggestions based on recipient personality traits, occasion, budget, and intelligent ranking models. Tech Stack & Technologies - Frontend: React.js, Tailwind CSS - Backend: Node.js, Express.js API - AI Integrat",
+      "date_published": "2024-02-15T00:00:00.000Z"
+    },
+    {
+      "id": "https://ahmedaqeelportfolio.vercel.app/posts/jarvis-student-ai",
+      "url": "https://ahmedaqeelportfolio.vercel.app/posts/jarvis-student-ai",
+      "title": "JARVIS Student AI - AI Study Productivity Companion",
+      "summary": "JARVIS Student AI is an intelligent study-productivity mobile application designed to streamline academic workflows for students through smart scheduling, AI note summarization, assignment tracking, and automated reminders. Tech Stack & Technologies - Frontend & Mobile: React Nat",
+      "date_published": "2024-05-10T00:00:00.000Z"
+    },
+    {
+      "id": "https://ahmedaqeelportfolio.vercel.app/posts/medireport-ai",
+      "url": "https://ahmedaqeelportfolio.vercel.app/posts/medireport-ai",
+      "title": "MediReport AI - Intelligent Medical Lab Report Analyzer",
+      "summary": "MediReport AI is an AI-powered medical lab-report analyzer that extracts key physiological and biological metrics from scanned lab reports using OCR pipelines and translates them into plain-language clinical explanations using Large Language Models (LLMs). Tech Stack & Technologi",
+      "date_published": "2024-06-15T00:00:00.000Z"
+    },
+    {
+      "id": "https://ahmedaqeelportfolio.vercel.app/posts/menu-cloud",
+      "url": "https://ahmedaqeelportfolio.vercel.app/posts/menu-cloud",
+      "title": "MenuCloud - Digital Restaurant Menu & Ordering Platform",
+      "summary": "MenuCloud is a comprehensive cloud restaurant-menu platform enabling touchless QR-code ordering, real-time menu management, and an administration analytics dashboard for restaurant owners. Tech Stack & Technologies - Frontend: React.js, HTML5, CSS3, Tailwind CSS - Backend: Node.j",
+      "date_published": "2024-04-01T00:00:00.000Z"
+    },
+    {
+      "id": "https://ahmedaqeelportfolio.vercel.app/posts/organization-finance-management-system",
+      "url": "https://ahmedaqeelportfolio.vercel.app/posts/organization-finance-management-system",
+      "title": "Organization Finance Management System (Final Year Project)",
+      "summary": "Organization Finance Management System is an enterprise-grade financial management platform developed as a Final Year Project to handle organizational income, expenses, analytics dashboards, and auditing reports. Tech Stack & Technologies - Frontend: React.js, Bootstrap - Backend",
+      "date_published": "2024-03-20T00:00:00.000Z"
+    },
+    {
+      "id": "https://ahmedaqeelportfolio.vercel.app/posts/personal-portfolio-website",
+      "url": "https://ahmedaqeelportfolio.vercel.app/posts/personal-portfolio-website",
+      "title": "Personal Developer Portfolio Website",
+      "summary": "Personal Developer Portfolio Website is an interactive, high-performance portfolio presenting Engr. Ahmed Aqeel's technical expertise, AI projects, software engineering background, achievements, and contact channels. Tech Stack & Technologies - Frontend Framework: Next.js, React.",
+      "date_published": "2023-11-15T00:00:00.000Z"
+    }
+  ]
+}

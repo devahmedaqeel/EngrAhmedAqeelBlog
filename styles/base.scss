@@ -1,0 +1,63 @@
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 15px;
+}
+
+body {
+  @apply bg-body font-primary font-normal text-text dark:bg-darkmode-body dark:text-darkmode-light;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-image: radial-gradient(rgba(108, 99, 255, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+}
+
+.dark body {
+  background-image: radial-gradient(rgba(129, 140, 248, 0.09) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-secondary font-bold text-dark dark:text-darkmode-light;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+h1, .h1 { @apply text-h1-sm md:text-h1; }
+h2, .h2 { @apply text-h2-sm md:text-h2; }
+h3, .h3 { @apply text-h3-sm md:text-h3; }
+h4, .h4 { @apply text-h4; }
+h5, .h5 { @apply text-h5; }
+h6, .h6 { @apply text-h6; }
+
+p {
+  text-align: justify;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+:focus-visible {
+  outline: 2px solid #6C63FF;
+  outline-offset: 2px;
+  border-radius: 4px;
+}

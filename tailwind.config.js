@@ -1,25 +1,40 @@
-const config = require("./config/config.json");
+const theme = require("./config/theme.json");
 
-let font_base = config.theme_font.font_family.primary.replace(/\+/g, " ");
-let font_secondary =
-  config.theme_font.font_family.secondary.replace(/\+/g, " ");
-
-let font_base_type = config.theme_font.font_family.primary_type;
-let font_secondary_type = config.theme_font.font_family.secondary_type;
+let font_base = Number(theme.fonts.font_size.base.replace("px", ""));
+let font_scale = Number(theme.fonts.font_size.scale);
+let h6 = font_base / font_base;
+let h5 = h6 * font_scale;
+let h4 = h5 * font_scale;
+let h3 = h4 * font_scale;
+let h2 = h3 * font_scale;
+let h1 = h2 * font_scale;
+let fontPrimary, fontPrimaryType, fontSecondary, fontSecondaryType;
+if (theme.fonts.font_family.primary) {
+  fontPrimary = theme.fonts.font_family.primary
+    .replace(/\+/g, " ")
+    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
+  fontPrimaryType = theme.fonts.font_family.primary_type;
+}
+if (theme.fonts.font_family.secondary) {
+  fontSecondary = theme.fonts.font_family.secondary
+    .replace(/\+/g, " ")
+    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
+  fontSecondaryType = theme.fonts.font_family.secondary_type;
+}
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./layouts/**/*.{js,ts,jsx,tsx}",
     "./content/**/*.{md,mdx}",
   ],
-  darkMode: "class",
   theme: {
     screens: {
       sm: "540px",
       md: "768px",
-      lg: "1024px",
+      lg: "992px",
       xl: "1280px",
       "2xl": "1536px",
     },
@@ -29,58 +44,48 @@ module.exports = {
     },
     extend: {
       colors: {
-        text: config.color_theme.default.text_color.default,
-        light: config.color_theme.default.text_color.light,
-        dark: config.color_theme.default.text_color.dark,
-        primary: config.color_theme.default.theme_color.primary,
-        secondary: config.color_theme.default.theme_color.secondary,
-        body: config.color_theme.default.theme_color.body,
-        border: config.color_theme.default.theme_color.border,
-        "theme-light": config.color_theme.default.theme_color.theme_light,
-        "theme-dark": config.color_theme.default.theme_color.theme_dark,
+        text: theme.colors.default.text_color.default,
+        dark: theme.colors.default.text_color.dark,
+        primary: theme.colors.default.theme_color.primary,
+        body: theme.colors.default.theme_color.body,
+        border: theme.colors.default.theme_color.border,
+        light: theme.colors.default.text_color.light,
+        "theme-light": theme.colors.default.theme_color.theme_light,
+        "theme-dark": theme.colors.default.theme_color.theme_dark,
         darkmode: {
-          text: config.color_theme.darkmode.text_color.default,
-          light: config.color_theme.darkmode.text_color.light,
-          dark: config.color_theme.darkmode.text_color.dark,
-          primary: config.color_theme.darkmode.theme_color.primary,
-          secondary: config.color_theme.darkmode.theme_color.secondary,
-          body: config.color_theme.darkmode.theme_color.body,
-          border: config.color_theme.darkmode.theme_color.border,
-          "theme-light": config.color_theme.darkmode.theme_color.theme_light,
-          "theme-dark": config.color_theme.darkmode.theme_color.theme_dark,
+          text: theme.colors.darkmode.text_color.default,
+          light: theme.colors.darkmode.text_color.light,
+          dark: theme.colors.darkmode.text_color.dark,
+          primary: theme.colors.darkmode.theme_color.primary,
+          secondary: theme.colors.darkmode.theme_color.secondary,
+          body: theme.colors.darkmode.theme_color.body,
+          border: theme.colors.darkmode.theme_color.border,
+          "theme-light": theme.colors.darkmode.theme_color.theme_light,
+          "theme-dark": theme.colors.darkmode.theme_color.theme_dark,
         },
       },
       fontSize: {
-        base: config.theme_font.font_size.base + "px",
-        h1: config.theme_font.font_size.h1 + "rem",
-        "h1-sm": config.theme_font.font_size.h1_sm + "rem",
-        h2: config.theme_font.font_size.h2 + "rem",
-        "h2-sm": config.theme_font.font_size.h2_sm + "rem",
-        h3: config.theme_font.font_size.h3 + "rem",
-        "h3-sm": config.theme_font.font_size.h3_sm + "rem",
-        h4: config.theme_font.font_size.h4 + "rem",
-        h5: config.theme_font.font_size.h5 + "rem",
-        h6: config.theme_font.font_size.h6 + "rem",
+        base: font_base + "px",
+        h1: h1 + "rem",
+        "h1-sm": h1 * 0.8 + "rem",
+        h2: h2 + "rem",
+        "h2-sm": h2 * 0.8 + "rem",
+        h3: h3 + "rem",
+        "h3-sm": h3 * 0.8 + "rem",
+        h4: h4 + "rem",
+        h5: h5 + "rem",
+        h6: h6 + "rem",
       },
       fontFamily: {
-        primary: [font_base, font_base_type],
-        secondary: [font_secondary, font_secondary_type],
+        primary: [fontPrimary, fontPrimaryType],
+        secondary: [fontSecondary, fontSecondaryType],
       },
     },
   },
   plugins: [
-    require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
-    require("tailwind-bootstrap-grid")({
-      generateContainer: false,
-      gridGutterWidth: "30px",
-      gridGutters: {
-        1: "4px",
-        2: "8px",
-        3: "16px",
-        4: "24px",
-        5: "32px",
-      },
-    }),
+    require("tailwind-scrollbar"),
+    require("@tailwindcss/forms"),
+    require("tailwind-bootstrap-grid")({ generateContainer: false }),
   ],
 };

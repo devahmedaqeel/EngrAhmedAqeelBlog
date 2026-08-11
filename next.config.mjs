@@ -1,3 +1,4 @@
+
 const nextConfig = {
   images: {
     unoptimized: true,
@@ -9,11 +10,15 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: "",
   },
+  // Compress responses
   compress: true,
+  // Power page transitions and reduce layout shifts
   reactStrictMode: false,
+  // Speed up builds
   typescript: {
     ignoreBuildErrors: true,
   },
+  // HTTP headers for caching static assets
   async headers() {
     return [
       {
