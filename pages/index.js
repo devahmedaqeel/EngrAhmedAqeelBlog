@@ -148,7 +148,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
   return (
     <Base>
       {/* ════════════════════════════ HERO ════════════════════════════ */}
-      <section className="relative overflow-hidden py-8 sm:py-12 lg:py-16" style={{ minHeight: "auto" }}>
+      <section className="relative overflow-hidden py-4 sm:py-6 lg:py-8" style={{ minHeight: "auto" }}>
         <div className="gradient-mesh pointer-events-none absolute inset-0 -z-10" />
 
         {/* Orbs */}
@@ -157,7 +157,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
         <div className="pointer-events-none absolute -bottom-16 -right-16 h-[400px] w-[400px] rounded-full blur-[100px]"
           style={{ background: "rgba(167,139,250,0.07)" }} />
 
-        <div className="container w-full py-16">
+        <div className="container w-full py-2 sm:py-4">
           <div className="flex flex-col-reverse items-center gap-10 lg:flex-row lg:gap-14">
 
             {/* ── Text Column ────────────────────────── */}
