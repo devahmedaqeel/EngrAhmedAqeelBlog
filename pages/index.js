@@ -74,7 +74,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "React & Next.js",
       color: "#61DAFB",
       bg: "rgba(97,218,251,0.15)",
-      pos: "top-2 left-0 sm:top-4 sm:-left-4 lg:-left-6",
+      pos: "top-4 md:-left-8 lg:-left-12",
       anim: "animate-float",
       delay: "0s",
     },
@@ -83,7 +83,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Node.js",
       color: "#339933",
       bg: "rgba(51,153,51,0.15)",
-      pos: "top-[26%] left-0 sm:-left-6 lg:-left-8",
+      pos: "top-[26%] md:-left-10 lg:-left-14",
       anim: "animate-float-reverse",
       delay: "0.4s",
     },
@@ -92,7 +92,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "MongoDB",
       color: "#47A248",
       bg: "rgba(71,162,72,0.15)",
-      pos: "top-[48%] left-0 sm:-left-6 lg:-left-8",
+      pos: "top-[48%] md:-left-10 lg:-left-14",
       anim: "animate-float",
       delay: "0.8s",
     },
@@ -101,7 +101,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Tailwind CSS",
       color: "#06B6D4",
       bg: "rgba(6,182,212,0.15)",
-      pos: "top-[70%] left-0 sm:-left-4 lg:-left-6",
+      pos: "top-[70%] md:-left-8 lg:-left-12",
       anim: "animate-float-reverse",
       delay: "1.2s",
     },
@@ -112,7 +112,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "AI / Gemini",
       color: "#8B5CF6",
       bg: "rgba(139,92,246,0.15)",
-      pos: "top-2 right-0 sm:top-4 sm:-right-4 lg:-right-6",
+      pos: "top-4 md:-right-8 lg:-right-12",
       anim: "animate-float-reverse",
       delay: "0.2s",
     },
@@ -121,7 +121,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Python",
       color: "#3776AB",
       bg: "rgba(55,118,171,0.15)",
-      pos: "top-[26%] right-0 sm:-right-6 lg:-right-8",
+      pos: "top-[26%] md:-right-10 lg:-right-14",
       anim: "animate-float",
       delay: "0.6s",
     },
@@ -130,7 +130,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Docker",
       color: "#2496ED",
       bg: "rgba(36,150,237,0.15)",
-      pos: "top-[48%] right-0 sm:-right-6 lg:-right-8",
+      pos: "top-[48%] md:-right-10 lg:-right-14",
       anim: "animate-float-reverse",
       delay: "1.0s",
     },
@@ -139,7 +139,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "React Native",
       color: "#F43F5E",
       bg: "rgba(244,63,94,0.15)",
-      pos: "top-[70%] right-0 sm:-right-4 lg:-right-6",
+      pos: "top-[70%] md:-right-8 lg:-right-12",
       anim: "animate-float",
       delay: "1.4s",
     },
@@ -221,57 +221,79 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
 
             {/* ── Photo + Symmetrical Skill Badges ─────────────────────── */}
             {banner.image_enable && (
-              <div className="relative w-full lg:w-[48%] flex justify-center items-end" style={{ minHeight: "440px" }}>
+              <div className="relative w-full lg:w-[48%] flex flex-col items-center">
+                
+                {/* Photo Frame */}
+                <div className="relative flex justify-center items-end min-h-[380px] sm:min-h-[440px] w-full">
 
-                {/* Symmetrical 8 Skill Badges with High Contrast & ON/OFF Blinking Beacon Dots */}
-                {skills.map((sk, i) => (
-                  <div
-                    key={i}
-                    className={`absolute ${sk.pos} ${sk.anim} z-10 flex items-center gap-2 rounded-xl border border-slate-200/90 dark:border-primary/40 bg-white/95 dark:bg-[#16152a]/95 px-3 py-1.5 shadow-xl backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-primary/60`}
-                    style={{
-                      animationDelay: sk.delay,
-                      boxShadow: `0 0 16px ${sk.color}35, 0 6px 16px rgba(0,0,0,0.18)`,
-                    }}
-                  >
-                    {/* Glowing High-Contrast Icon Badge */}
+                  {/* Symmetrical 8 Skill Badges (Desktop/Tablet Floating Outside Photo) */}
+                  {skills.map((sk, i) => (
                     <div
-                      className="flex h-5.5 w-5.5 items-center justify-center rounded-lg flex-shrink-0"
+                      key={i}
+                      className={`hidden md:flex absolute ${sk.pos} ${sk.anim} z-10 items-center gap-2 rounded-xl border border-slate-200/90 dark:border-primary/40 bg-white/95 dark:bg-[#16152a]/95 px-3 py-1.5 shadow-xl backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-primary/60`}
                       style={{
-                        background: sk.bg,
-                        color: sk.color,
-                        boxShadow: `0 0 10px ${sk.color}80`,
+                        animationDelay: sk.delay,
+                        boxShadow: `0 0 16px ${sk.color}35, 0 6px 16px rgba(0,0,0,0.18)`,
                       }}
                     >
-                      {sk.icon}
+                      <div
+                        className="flex h-5.5 w-5.5 items-center justify-center rounded-lg flex-shrink-0"
+                        style={{
+                          background: sk.bg,
+                          color: sk.color,
+                          boxShadow: `0 0 10px ${sk.color}80`,
+                        }}
+                      >
+                        {sk.icon}
+                      </div>
+
+                      <span
+                        className="animate-beacon-blink h-2 w-2 rounded-full flex-shrink-0"
+                        style={{
+                          backgroundColor: sk.color,
+                          color: sk.color,
+                        }}
+                      />
+
+                      <span className="text-[10.5px] font-black text-slate-900 dark:text-white whitespace-nowrap tracking-wide">
+                        {sk.label}
+                      </span>
                     </div>
+                  ))}
 
-                    {/* Blinking ON/OFF Beacon Light Indicator */}
-                    <span
-                      className="animate-beacon-blink h-2 w-2 rounded-full flex-shrink-0"
-                      style={{
-                        backgroundColor: sk.color,
-                        color: sk.color,
-                      }}
-                    />
+                  {/* Photos */}
+                  <ImageFallback
+                    className="dark:hidden relative z-[1] max-h-[380px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
+                    src="/images/author-light.png"
+                    width={420} height={470} priority alt="Engr. Ahmed Aqeel"
+                  />
+                  <ImageFallback
+                    className="hidden dark:block relative z-[1] max-h-[380px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
+                    src="/images/author-dark.png"
+                    width={420} height={470} priority alt="Engr. Ahmed Aqeel"
+                  />
+                </div>
 
-                    {/* High-Contrast Skill Label */}
-                    <span className="text-[10.5px] font-black text-slate-900 dark:text-white whitespace-nowrap tracking-wide">
-                      {sk.label}
-                    </span>
-                  </div>
-                ))}
+                {/* Mobile Skill Badges Bar (Clean & Non-Overlapping) */}
+                <div className="md:hidden mt-4 flex flex-wrap justify-center gap-1.5 px-2 z-10">
+                  {skills.map((sk, i) => (
+                    <div
+                      key={`mob-${i}`}
+                      className="flex items-center gap-1.5 rounded-lg border border-slate-200/90 dark:border-primary/30 bg-white/95 dark:bg-[#16152a]/95 px-2.5 py-1 shadow-sm backdrop-blur-md"
+                    >
+                      <div
+                        className="flex h-4.5 w-4.5 items-center justify-center rounded-md flex-shrink-0 text-[10px]"
+                        style={{ background: sk.bg, color: sk.color }}
+                      >
+                        {sk.icon}
+                      </div>
+                      <span className="text-[10px] font-bold text-slate-900 dark:text-white whitespace-nowrap">
+                        {sk.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
 
-                {/* Photos */}
-                <ImageFallback
-                  className="dark:hidden relative z-[1] max-h-[470px] w-auto object-contain drop-shadow-2xl"
-                  src="/images/author-light.png"
-                  width={420} height={470} priority alt="Engr. Ahmed Aqeel"
-                />
-                <ImageFallback
-                  className="hidden dark:block relative z-[1] max-h-[470px] w-auto object-contain drop-shadow-2xl"
-                  src="/images/author-dark.png"
-                  width={420} height={470} priority alt="Engr. Ahmed Aqeel"
-                />
               </div>
             )}
           </div>

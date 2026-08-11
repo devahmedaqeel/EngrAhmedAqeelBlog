@@ -1,17 +1,12 @@
-import fs from "fs";
-import path from "path";
+import config from "@config/config.json";
+import { getSinglePage } from "@lib/contentParser";
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   // Allow GET or POST
   try {
-    const jsonPath = path.join(process.cwd(), ".json/posts.json");
-    if (!fs.existsSync(jsonPath)) {
-      return res.status(400).json({ success: false, error: "No posts data found." });
-    }
-
-    const postsRaw = fs.readFileSync(jsonPath, "utf-8");
-    const posts = JSON.parse(postsRaw || "[]");
+    const { blog_folder } = config.settings;
+    const posts = getSinglePage(`content/${blog_folder}`);
 
     if (!posts || posts.length === 0) {
       return res.status(200).json({ success: true, message: "No posts available to notify." });
@@ -25,7 +20,7 @@ export default async function handler(req, res) {
     const siteUrl = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : "https://ahmedaqeelportfolio.vercel.app";
-    const postUrl = `${siteUrl}/posts/${slug}`;
+    const postUrl = `${siteUrl}/${blog_folder}/${slug}`;
 
     // Get SMTP Configuration
     const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
