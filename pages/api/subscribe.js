@@ -12,10 +12,10 @@ export default async function handler(req, res) {
   }
 
   const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
-  const smtpPort = parseInt(process.env.SMTP_PORT || "587");
+  const smtpPort = parseInt(process.env.SMTP_PORT || "465");
   const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  const toEmail = process.env.CONTACT_TO_EMAIL || process.env.SMTP_USER || "engrahmedaqeel14@gmail.com";
+  const smtpPass = process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, "") : "";
+  const toEmail = process.env.CONTACT_TO_EMAIL || smtpUser || "engrahmedaqeel14@gmail.com";
 
   if (smtpUser && smtpPass) {
     try {
@@ -27,6 +27,10 @@ export default async function handler(req, res) {
           user: smtpUser,
           pass: smtpPass,
         },
+        tls: {
+          rejectUnauthorized: false,
+        },
+        connectionTimeout: 10000,
       });
 
       // 1. Send Welcome Email to Subscriber

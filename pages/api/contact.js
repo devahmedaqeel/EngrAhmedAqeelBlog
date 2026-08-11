@@ -13,10 +13,10 @@ export default async function handler(req, res) {
 
   // Get SMTP Config from env variables or defaults
   const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
-  const smtpPort = parseInt(process.env.SMTP_PORT || "587");
+  const smtpPort = parseInt(process.env.SMTP_PORT || "465");
   const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  const toEmail = process.env.CONTACT_TO_EMAIL || process.env.SMTP_USER || "engrahmedaqeel14@gmail.com";
+  const smtpPass = process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, "") : "";
+  const toEmail = process.env.CONTACT_TO_EMAIL || smtpUser || "engrahmedaqeel14@gmail.com";
 
   // If SMTP user & pass are provided, send via Nodemailer
   if (smtpUser && smtpPass) {
@@ -29,6 +29,10 @@ export default async function handler(req, res) {
           user: smtpUser,
           pass: smtpPass,
         },
+        tls: {
+          rejectUnauthorized: false,
+        },
+        connectionTimeout: 10000,
       });
 
       // 1. Email to Site Owner
@@ -77,7 +81,7 @@ export default async function handler(req, res) {
       return res.status(200).json({ success: true, message: "Message sent successfully!" });
     } catch (error) {
       console.error("Nodemailer error:", error);
-      return res.status(500).json({ success: false, error: "Failed to send email. Please try again later." });
+      return res.status(500).json({ success: false, error: `Email Error: ${error.message || "Failed to send"}` });
     }
   }
 
