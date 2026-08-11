@@ -68,13 +68,13 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
 
   // 8 Skill Badges close to photo with even vertical spacing (top to bottom)
   const skills = [
-    // Left Column Badges (4 skills - Evenly Spaced Vertically)
+    // Left Column Badges (4 skills - Perfectly Symmetrical & Parallel)
     {
       icon: <FaReact className="text-[9px] sm:text-[10px] md:text-[11px]" />,
       label: "React & Next.js",
       color: "#61DAFB",
       bg: "rgba(97,218,251,0.15)",
-      pos: "top-2 -left-1 sm:-left-4 md:-left-8 lg:-left-12",
+      pos: "top-6 left-0 sm:-left-4 md:-left-8 lg:-left-12",
       anim: "animate-float",
       delay: "0s",
     },
@@ -83,7 +83,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Node.js",
       color: "#339933",
       bg: "rgba(51,153,51,0.15)",
-      pos: "top-[26%] -left-1.5 sm:-left-5 md:-left-10 lg:-left-14",
+      pos: "top-[28%] left-0 sm:-left-5 md:-left-10 lg:-left-14",
       anim: "animate-float-reverse",
       delay: "0.4s",
     },
@@ -92,7 +92,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "MongoDB",
       color: "#47A248",
       bg: "rgba(71,162,72,0.15)",
-      pos: "top-[48%] -left-1.5 sm:-left-5 md:-left-10 lg:-left-14",
+      pos: "top-[50%] left-0 sm:-left-5 md:-left-10 lg:-left-14",
       anim: "animate-float",
       delay: "0.8s",
     },
@@ -101,18 +101,18 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Tailwind CSS",
       color: "#06B6D4",
       bg: "rgba(6,182,212,0.15)",
-      pos: "top-[70%] -left-1 sm:-left-4 md:-left-8 lg:-left-12",
+      pos: "top-[72%] left-0 sm:-left-4 md:-left-8 lg:-left-12",
       anim: "animate-float-reverse",
       delay: "1.2s",
     },
 
-    // Right Column Badges (4 skills - Evenly Spaced Vertically)
+    // Right Column Badges (4 skills - Perfectly Symmetrical & Parallel)
     {
       icon: <FaBrain className="text-[9px] sm:text-[10px] md:text-[11px]" />,
       label: "AI / Gemini",
       color: "#8B5CF6",
       bg: "rgba(139,92,246,0.15)",
-      pos: "top-2 -right-1 sm:-right-4 md:-right-8 lg:-right-12",
+      pos: "top-6 right-0 sm:-right-4 md:-right-8 lg:-right-12",
       anim: "animate-float-reverse",
       delay: "0.2s",
     },
@@ -121,7 +121,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Python",
       color: "#3776AB",
       bg: "rgba(55,118,171,0.15)",
-      pos: "top-[26%] -right-1.5 sm:-right-5 md:-right-10 lg:-right-14",
+      pos: "top-[28%] right-0 sm:-right-5 md:-right-10 lg:-right-14",
       anim: "animate-float",
       delay: "0.6s",
     },
@@ -130,7 +130,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Docker",
       color: "#2496ED",
       bg: "rgba(36,150,237,0.15)",
-      pos: "top-[48%] -right-1.5 sm:-right-5 md:-right-10 lg:-right-14",
+      pos: "top-[50%] right-0 sm:-right-5 md:-right-10 lg:-right-14",
       anim: "animate-float-reverse",
       delay: "1.0s",
     },
@@ -139,7 +139,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "React Native",
       color: "#F43F5E",
       bg: "rgba(244,63,94,0.15)",
-      pos: "top-[70%] -right-1 sm:-right-4 md:-right-8 lg:-right-12",
+      pos: "top-[72%] right-0 sm:-right-4 md:-right-8 lg:-right-12",
       anim: "animate-float",
       delay: "1.4s",
     },
@@ -221,7 +221,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
 
             {/* ── Photo + Symmetrical Skill Badges ─────────────────────── */}
             {banner.image_enable && (
-              <div className="relative w-full lg:w-[48%] flex justify-center items-end min-h-[360px] sm:min-h-[440px]">
+              <div className="relative w-full lg:w-[48%] flex justify-center items-start pt-6 sm:pt-4 min-h-[380px] sm:min-h-[440px]">
 
                 {/* Symmetrical 8 Moving Skill Badges (Ultra-Compact scale-65 on Mobile) */}
                 {skills.map((sk, i) => (
@@ -261,7 +261,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
                   </div>
                 ))}
 
-                {/* Photos (Tall & Centered) */}
+                {/* Photos (Top-Aligned & Centered) */}
                 <ImageFallback
                   className="dark:hidden relative z-[1] max-h-[350px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
                   src="/images/author-light.png"
