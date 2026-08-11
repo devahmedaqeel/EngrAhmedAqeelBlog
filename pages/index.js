@@ -74,7 +74,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "React & Next.js",
       color: "#61DAFB",
       bg: "rgba(97,218,251,0.15)",
-      pos: "top-2 -left-3 sm:-left-6 md:-left-10 lg:-left-14",
+      pos: "top-2 left-0 sm:-left-4 md:-left-8 lg:-left-12",
       anim: "animate-float",
       delay: "0s",
     },
@@ -83,7 +83,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Node.js",
       color: "#339933",
       bg: "rgba(51,153,51,0.15)",
-      pos: "top-[26%] -left-4 sm:-left-7 md:-left-12 lg:-left-16",
+      pos: "top-[26%] left-0 sm:-left-6 md:-left-10 lg:-left-14",
       anim: "animate-float-reverse",
       delay: "0.4s",
     },
@@ -92,7 +92,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "MongoDB",
       color: "#47A248",
       bg: "rgba(71,162,72,0.15)",
-      pos: "top-[48%] -left-4 sm:-left-7 md:-left-12 lg:-left-16",
+      pos: "top-[48%] left-0 sm:-left-6 md:-left-10 lg:-left-14",
       anim: "animate-float",
       delay: "0.8s",
     },
@@ -101,7 +101,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Tailwind CSS",
       color: "#06B6D4",
       bg: "rgba(6,182,212,0.15)",
-      pos: "top-[70%] -left-3 sm:-left-6 md:-left-10 lg:-left-14",
+      pos: "top-[70%] left-0 sm:-left-4 md:-left-8 lg:-left-12",
       anim: "animate-float-reverse",
       delay: "1.2s",
     },
@@ -112,7 +112,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "AI / Gemini",
       color: "#8B5CF6",
       bg: "rgba(139,92,246,0.15)",
-      pos: "top-2 -right-3 sm:-right-6 md:-right-10 lg:-right-14",
+      pos: "top-2 right-0 sm:-right-4 md:-right-8 lg:-right-12",
       anim: "animate-float-reverse",
       delay: "0.2s",
     },
@@ -121,7 +121,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Python",
       color: "#3776AB",
       bg: "rgba(55,118,171,0.15)",
-      pos: "top-[26%] -right-4 sm:-right-7 md:-right-12 lg:-right-16",
+      pos: "top-[26%] right-0 sm:-right-6 md:-right-10 lg:-right-14",
       anim: "animate-float",
       delay: "0.6s",
     },
@@ -130,7 +130,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "Docker",
       color: "#2496ED",
       bg: "rgba(36,150,237,0.15)",
-      pos: "top-[48%] -right-4 sm:-right-7 md:-right-12 lg:-right-16",
+      pos: "top-[48%] right-0 sm:-right-6 md:-right-10 lg:-right-14",
       anim: "animate-float-reverse",
       delay: "1.0s",
     },
@@ -139,7 +139,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
       label: "React Native",
       color: "#F43F5E",
       bg: "rgba(244,63,94,0.15)",
-      pos: "top-[70%] -right-3 sm:-right-6 md:-right-10 lg:-right-14",
+      pos: "top-[70%] right-0 sm:-right-4 md:-right-8 lg:-right-12",
       anim: "animate-float",
       delay: "1.4s",
     },
@@ -221,13 +221,13 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
 
             {/* ── Photo + Symmetrical Skill Badges ─────────────────────── */}
             {banner.image_enable && (
-              <div className="relative w-full lg:w-[48%] flex justify-center items-end" style={{ minHeight: "440px" }}>
+              <div className="relative w-full lg:w-[48%] flex justify-center items-end min-h-[330px] sm:min-h-[440px]">
 
-                {/* Symmetrical 8 Moving Skill Badges (Compact & Scaled on Mobile) */}
+                {/* Symmetrical 8 Moving Skill Badges (Fit 100% inside screen on mobile) */}
                 {skills.map((sk, i) => (
                   <div
                     key={i}
-                    className={`absolute ${sk.pos} ${sk.anim} z-10 flex items-center gap-1 sm:gap-1.5 md:gap-2 rounded-lg md:rounded-xl border border-slate-200/90 dark:border-primary/40 bg-white/95 dark:bg-[#16152a]/95 px-1.5 py-0.5 sm:px-2 sm:py-1 md:px-3 md:py-1.5 shadow-md md:shadow-xl backdrop-blur-md transition-all duration-300 origin-center scale-[0.72] sm:scale-90 md:scale-100 hover:scale-110 hover:border-primary/60`}
+                    className={`absolute ${sk.pos} ${sk.anim} z-10 flex items-center gap-1 sm:gap-1.5 md:gap-2 rounded-lg md:rounded-xl border border-slate-200/90 dark:border-primary/40 bg-white/95 dark:bg-[#16152a]/95 px-1.5 py-0.5 sm:px-2 sm:py-1 md:px-3 md:py-1.5 shadow-md md:shadow-xl backdrop-blur-md transition-all duration-300 origin-center scale-[0.76] sm:scale-90 md:scale-100 hover:scale-110 hover:border-primary/60`}
                     style={{
                       animationDelay: sk.delay,
                       boxShadow: `0 0 14px ${sk.color}30, 0 4px 14px rgba(0,0,0,0.15)`,
@@ -263,12 +263,12 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
 
                 {/* Photos */}
                 <ImageFallback
-                  className="dark:hidden relative z-[1] max-h-[380px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
+                  className="dark:hidden relative z-[1] max-h-[290px] xs:max-h-[320px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
                   src="/images/author-light.png"
                   width={420} height={470} priority alt="Engr. Ahmed Aqeel"
                 />
                 <ImageFallback
-                  className="hidden dark:block relative z-[1] max-h-[380px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
+                  className="hidden dark:block relative z-[1] max-h-[290px] xs:max-h-[320px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
                   src="/images/author-dark.png"
                   width={420} height={470} priority alt="Engr. Ahmed Aqeel"
                 />
