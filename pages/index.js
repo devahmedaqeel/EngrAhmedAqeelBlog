@@ -70,76 +70,76 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
   const skills = [
     // Left Column Badges (4 skills - Evenly Spaced Vertically)
     {
-      icon: <FaReact className="text-[11px]" />,
+      icon: <FaReact className="text-[9px] sm:text-[10px] md:text-[11px]" />,
       label: "React & Next.js",
       color: "#61DAFB",
       bg: "rgba(97,218,251,0.15)",
-      pos: "top-4 md:-left-8 lg:-left-12",
+      pos: "top-2 -left-3 sm:-left-6 md:-left-10 lg:-left-14",
       anim: "animate-float",
       delay: "0s",
     },
     {
-      icon: <FaNodeJs className="text-[11px]" />,
+      icon: <FaNodeJs className="text-[9px] sm:text-[10px] md:text-[11px]" />,
       label: "Node.js",
       color: "#339933",
       bg: "rgba(51,153,51,0.15)",
-      pos: "top-[26%] md:-left-10 lg:-left-14",
+      pos: "top-[26%] -left-4 sm:-left-7 md:-left-12 lg:-left-16",
       anim: "animate-float-reverse",
       delay: "0.4s",
     },
     {
-      icon: <FaDatabase className="text-[11px]" />,
+      icon: <FaDatabase className="text-[9px] sm:text-[10px] md:text-[11px]" />,
       label: "MongoDB",
       color: "#47A248",
       bg: "rgba(71,162,72,0.15)",
-      pos: "top-[48%] md:-left-10 lg:-left-14",
+      pos: "top-[48%] -left-4 sm:-left-7 md:-left-12 lg:-left-16",
       anim: "animate-float",
       delay: "0.8s",
     },
     {
-      icon: <SiTailwindcss className="text-[11px]" />,
+      icon: <SiTailwindcss className="text-[9px] sm:text-[10px] md:text-[11px]" />,
       label: "Tailwind CSS",
       color: "#06B6D4",
       bg: "rgba(6,182,212,0.15)",
-      pos: "top-[70%] md:-left-8 lg:-left-12",
+      pos: "top-[70%] -left-3 sm:-left-6 md:-left-10 lg:-left-14",
       anim: "animate-float-reverse",
       delay: "1.2s",
     },
 
     // Right Column Badges (4 skills - Evenly Spaced Vertically)
     {
-      icon: <FaBrain className="text-[11px]" />,
+      icon: <FaBrain className="text-[9px] sm:text-[10px] md:text-[11px]" />,
       label: "AI / Gemini",
       color: "#8B5CF6",
       bg: "rgba(139,92,246,0.15)",
-      pos: "top-4 md:-right-8 lg:-right-12",
+      pos: "top-2 -right-3 sm:-right-6 md:-right-10 lg:-right-14",
       anim: "animate-float-reverse",
       delay: "0.2s",
     },
     {
-      icon: <FaPython className="text-[11px]" />,
+      icon: <FaPython className="text-[9px] sm:text-[10px] md:text-[11px]" />,
       label: "Python",
       color: "#3776AB",
       bg: "rgba(55,118,171,0.15)",
-      pos: "top-[26%] md:-right-10 lg:-right-14",
+      pos: "top-[26%] -right-4 sm:-right-7 md:-right-12 lg:-right-16",
       anim: "animate-float",
       delay: "0.6s",
     },
     {
-      icon: <FaDocker className="text-[11px]" />,
+      icon: <FaDocker className="text-[9px] sm:text-[10px] md:text-[11px]" />,
       label: "Docker",
       color: "#2496ED",
       bg: "rgba(36,150,237,0.15)",
-      pos: "top-[48%] md:-right-10 lg:-right-14",
+      pos: "top-[48%] -right-4 sm:-right-7 md:-right-12 lg:-right-16",
       anim: "animate-float-reverse",
       delay: "1.0s",
     },
     {
-      icon: <FaMobileAlt className="text-[11px]" />,
+      icon: <FaMobileAlt className="text-[9px] sm:text-[10px] md:text-[11px]" />,
       label: "React Native",
       color: "#F43F5E",
       bg: "rgba(244,63,94,0.15)",
-      pos: "top-[70%] md:-right-8 lg:-right-12",
+      pos: "top-[70%] -right-3 sm:-right-6 md:-right-10 lg:-right-14",
       anim: "animate-float",
       delay: "1.4s",
     },
@@ -221,79 +221,57 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
 
             {/* ── Photo + Symmetrical Skill Badges ─────────────────────── */}
             {banner.image_enable && (
-              <div className="relative w-full lg:w-[48%] flex flex-col items-center">
-                
-                {/* Photo Frame */}
-                <div className="relative flex justify-center items-end min-h-[380px] sm:min-h-[440px] w-full">
+              <div className="relative w-full lg:w-[48%] flex justify-center items-end" style={{ minHeight: "440px" }}>
 
-                  {/* Symmetrical 8 Skill Badges (Desktop/Tablet Floating Outside Photo) */}
-                  {skills.map((sk, i) => (
+                {/* Symmetrical 8 Moving Skill Badges (Compact & Scaled on Mobile) */}
+                {skills.map((sk, i) => (
+                  <div
+                    key={i}
+                    className={`absolute ${sk.pos} ${sk.anim} z-10 flex items-center gap-1 sm:gap-1.5 md:gap-2 rounded-lg md:rounded-xl border border-slate-200/90 dark:border-primary/40 bg-white/95 dark:bg-[#16152a]/95 px-1.5 py-0.5 sm:px-2 sm:py-1 md:px-3 md:py-1.5 shadow-md md:shadow-xl backdrop-blur-md transition-all duration-300 origin-center scale-[0.72] sm:scale-90 md:scale-100 hover:scale-110 hover:border-primary/60`}
+                    style={{
+                      animationDelay: sk.delay,
+                      boxShadow: `0 0 14px ${sk.color}30, 0 4px 14px rgba(0,0,0,0.15)`,
+                    }}
+                  >
+                    {/* Icon Badge */}
                     <div
-                      key={i}
-                      className={`hidden md:flex absolute ${sk.pos} ${sk.anim} z-10 items-center gap-2 rounded-xl border border-slate-200/90 dark:border-primary/40 bg-white/95 dark:bg-[#16152a]/95 px-3 py-1.5 shadow-xl backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-primary/60`}
+                      className="flex h-4 w-4 sm:h-5 sm:w-5 md:h-5.5 md:w-5.5 items-center justify-center rounded-md md:rounded-lg flex-shrink-0"
                       style={{
-                        animationDelay: sk.delay,
-                        boxShadow: `0 0 16px ${sk.color}35, 0 6px 16px rgba(0,0,0,0.18)`,
+                        background: sk.bg,
+                        color: sk.color,
+                        boxShadow: `0 0 8px ${sk.color}60`,
                       }}
                     >
-                      <div
-                        className="flex h-5.5 w-5.5 items-center justify-center rounded-lg flex-shrink-0"
-                        style={{
-                          background: sk.bg,
-                          color: sk.color,
-                          boxShadow: `0 0 10px ${sk.color}80`,
-                        }}
-                      >
-                        {sk.icon}
-                      </div>
-
-                      <span
-                        className="animate-beacon-blink h-2 w-2 rounded-full flex-shrink-0"
-                        style={{
-                          backgroundColor: sk.color,
-                          color: sk.color,
-                        }}
-                      />
-
-                      <span className="text-[10.5px] font-black text-slate-900 dark:text-white whitespace-nowrap tracking-wide">
-                        {sk.label}
-                      </span>
+                      {sk.icon}
                     </div>
-                  ))}
 
-                  {/* Photos */}
-                  <ImageFallback
-                    className="dark:hidden relative z-[1] max-h-[380px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
-                    src="/images/author-light.png"
-                    width={420} height={470} priority alt="Engr. Ahmed Aqeel"
-                  />
-                  <ImageFallback
-                    className="hidden dark:block relative z-[1] max-h-[380px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
-                    src="/images/author-dark.png"
-                    width={420} height={470} priority alt="Engr. Ahmed Aqeel"
-                  />
-                </div>
+                    {/* Beacon Light Indicator */}
+                    <span
+                      className="animate-beacon-blink h-1.5 w-1.5 md:h-2 md:w-2 rounded-full flex-shrink-0"
+                      style={{
+                        backgroundColor: sk.color,
+                        color: sk.color,
+                      }}
+                    />
 
-                {/* Mobile Skill Badges Bar (Clean & Non-Overlapping) */}
-                <div className="md:hidden mt-4 flex flex-wrap justify-center gap-1.5 px-2 z-10">
-                  {skills.map((sk, i) => (
-                    <div
-                      key={`mob-${i}`}
-                      className="flex items-center gap-1.5 rounded-lg border border-slate-200/90 dark:border-primary/30 bg-white/95 dark:bg-[#16152a]/95 px-2.5 py-1 shadow-sm backdrop-blur-md"
-                    >
-                      <div
-                        className="flex h-4.5 w-4.5 items-center justify-center rounded-md flex-shrink-0 text-[10px]"
-                        style={{ background: sk.bg, color: sk.color }}
-                      >
-                        {sk.icon}
-                      </div>
-                      <span className="text-[10px] font-bold text-slate-900 dark:text-white whitespace-nowrap">
-                        {sk.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                    {/* Skill Label */}
+                    <span className="text-[9px] sm:text-[10px] md:text-[10.5px] font-black text-slate-900 dark:text-white whitespace-nowrap tracking-wide">
+                      {sk.label}
+                    </span>
+                  </div>
+                ))}
 
+                {/* Photos */}
+                <ImageFallback
+                  className="dark:hidden relative z-[1] max-h-[380px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
+                  src="/images/author-light.png"
+                  width={420} height={470} priority alt="Engr. Ahmed Aqeel"
+                />
+                <ImageFallback
+                  className="hidden dark:block relative z-[1] max-h-[380px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
+                  src="/images/author-dark.png"
+                  width={420} height={470} priority alt="Engr. Ahmed Aqeel"
+                />
               </div>
             )}
           </div>
