@@ -148,7 +148,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
   return (
     <Base>
       {/* ════════════════════════════ HERO ════════════════════════════ */}
-      <section className="relative overflow-hidden py-4 sm:py-6 lg:py-8" style={{ minHeight: "auto" }}>
+      <section className="relative overflow-hidden pt-1 pb-4 sm:pt-2 sm:pb-6 lg:pt-3 lg:pb-8" style={{ minHeight: "auto" }}>
         <div className="gradient-mesh pointer-events-none absolute inset-0 -z-10" />
 
         {/* Orbs */}
@@ -157,8 +157,8 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
         <div className="pointer-events-none absolute -bottom-16 -right-16 h-[400px] w-[400px] rounded-full blur-[100px]"
           style={{ background: "rgba(167,139,250,0.07)" }} />
 
-        <div className="container w-full py-2 sm:py-4">
-          <div className="flex flex-col-reverse items-center gap-10 lg:flex-row lg:gap-14">
+        <div className="container w-full py-0">
+          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:gap-10">
 
             {/* ── Text Column ────────────────────────── */}
             <div className="w-full text-center lg:w-[52%] lg:text-left">
@@ -221,7 +221,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
 
             {/* ── Photo + Symmetrical Skill Badges ─────────────────────── */}
             {banner.image_enable && (
-              <div className="relative w-full lg:w-[48%] flex justify-center items-start pt-6 sm:pt-4 min-h-[380px] sm:min-h-[440px]">
+              <div className="relative w-full lg:w-[48%] flex justify-center items-start pt-1 sm:pt-2 min-h-[350px] sm:min-h-[440px]">
 
                 {/* Symmetrical 8 Moving Skill Badges (Ultra-Compact scale-65 on Mobile) */}
                 {skills.map((sk, i) => (
