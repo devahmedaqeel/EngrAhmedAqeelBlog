@@ -19,7 +19,7 @@ export default async function handler(req, res) {
             title: "Official Meta React Native Professional Certification Achieved!",
             description: "Engr. Ahmed Aqeel has officially earned the Meta React Native Certification verified on Coursera (Credential ID: VMI5AHPW66BK).",
             categories: ["certifications", "mobile-apps", "react-native"],
-            image: "/images/post/jarvis-student-ai.png",
+            image: "/images/post/meta-react-native-certificate.png",
           },
         },
       ];

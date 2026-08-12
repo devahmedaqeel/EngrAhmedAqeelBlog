@@ -1,7 +1,7 @@
 ---
 title: "Official Meta React Native Professional Certification Achieved!"
 date: 2026-08-12T00:00:00Z
-image: /images/post/jarvis-student-ai.png
+image: /images/post/meta-react-native-certificate.png
 categories: ["certifications", "mobile-apps", "react-native"]
 featured: true
 draft: false
