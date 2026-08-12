@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     const defaultPass = "svgtgjzhnbqtqgdt";
     const smtpPass = (process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, "") : "") || defaultPass;
 
-    let recipients = ["chahmedaqeel53@gmail.com", "engrahmedaqeel14@gmail.com", "engrahmedaqeel99@gmail.com"];
+    let recipients = ["chahmedaqeel53@gmail.com", "engrahmedaqeel14@gmail.com"];
     
     if (req.query?.email) {
       recipients = [req.query.email];
@@ -52,7 +52,7 @@ export default async function handler(req, res) {
         if (fs.existsSync(subFilePath)) {
           const loadedSubs = JSON.parse(fs.readFileSync(subFilePath, "utf-8"));
           if (Array.isArray(loadedSubs) && loadedSubs.length > 0) {
-            recipients = Array.from(new Set([...recipients, ...loadedSubs]));
+            recipients = Array.from(new Set(loadedSubs)).filter(email => email !== "engrahmedaqeel99@gmail.com");
           }
         }
       } catch (err) {
