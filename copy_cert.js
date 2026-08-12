@@ -1,8 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
-const src = 'C:/Users/user/.gemini/antigravity-ide/brain/cdae5f38-f3a0-479c-9002-5da4406dd584/.tempmediaStorage/media_cdae5f38-f3a0-479c-9002-5da4406dd584_1786513534911.png';
-const dest = 'c:/Users/user/Downloads/geeky-nextjs-1.0.0/public/images/post/meta-react-native-certificate.png';
+const src = 'C:/Users/user/.gemini/antigravity-ide/brain/cdae5f38-f3a0-479c-9002-5da4406dd584/meta_react_native_certificate_1786517541155.png';
+const dest = path.join(__dirname, 'public', 'images', 'post', 'meta-react-native-certificate.png');
+
+if (!fs.existsSync(path.dirname(dest))) {
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+}
 
 fs.copyFileSync(src, dest);
-console.log('Successfully copied certificate image to:', dest);
+console.log('Successfully copied generated Meta certificate image to:', dest);
