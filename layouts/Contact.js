@@ -205,9 +205,9 @@ const Contact = ({ data }) => {
             </div>
 
             {/* Guaranteed Response SLA */}
-            <div className="flex items-center gap-2 rounded-xl border border-border dark:border-darkmode-border bg-theme-light dark:bg-darkmode-theme-dark px-3.5 py-2 text-[11px] text-light dark:text-darkmode-text">
-              <FaClock className="text-primary flex-shrink-0" />
-              <span>Typical response SLA: <strong>Within 1–2 hours</strong></span>
+            <div className="flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-2 text-[11px] text-emerald-600 dark:text-emerald-400 font-bold">
+              <FaClock className="text-emerald-500 flex-shrink-0" />
+              <span>Priority Response SLA: <strong>Within Minutes (Instant)</strong></span>
             </div>
           </div>
 
@@ -246,9 +246,9 @@ const Contact = ({ data }) => {
                   {/* Summary Card */}
                   <div className="mx-auto max-w-md rounded-2xl border border-slate-200/80 dark:border-primary/25 bg-gradient-to-b from-white/90 to-slate-50/90 dark:from-[#1a1936]/90 dark:to-[#14132a]/90 p-5 mb-7 shadow-xl backdrop-blur-xl text-left space-y-3">
                     <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary font-bold flex-shrink-0">⚡</span>
+                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500 font-bold flex-shrink-0">⚡</span>
                       <div>
-                        <span className="font-bold text-slate-900 dark:text-white">Response Time:</span> Within <strong>1–2 Hours</strong>
+                        <span className="font-bold text-slate-900 dark:text-white">Response Time:</span> Within <strong>Minutes (Instant Priority)</strong>
                       </div>
                     </div>
 

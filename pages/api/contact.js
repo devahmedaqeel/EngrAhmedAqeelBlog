@@ -61,7 +61,7 @@ export default async function handler(req, res) {
           <div style="font-family: Arial, sans-serif; padding: 20px; color: #1a1a2e; max-width: 600px;">
             <h2 style="color: #6C63FF;">Thank you for contacting me!</h2>
             <p>Hi <strong>${name}</strong>,</p>
-            <p>Your message has been received successfully. I will review your inquiry and get back to you within 1-2 hours.</p>
+            <p>Your message has been received successfully. I will review your inquiry and get back to you <strong>within minutes!</strong></p>
             <div style="background: #f8f9fa; border: 1px solid #e8e8f0; padding: 15px; margin: 15px 0; border-radius: 8px;">
               <p style="margin: 0; font-size: 13px; color: #555;"><strong>Your Message:</strong></p>
               <p style="margin-top: 5px; font-size: 13px; color: #333;">"${message}"</p>
