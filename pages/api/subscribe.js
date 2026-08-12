@@ -24,29 +24,17 @@ export default async function handler(req, res) {
     toEmail = "engrahmedaqeel14@gmail.com";
   }
 
-  const createTransporter = (port, secure) => {
-    return nodemailer.createTransport({
-      host: smtpHost,
-      port: port,
-      secure: secure,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-      connectionTimeout: 15000,
-    });
-  };
-
-  try {
-    let transporter;
-    try {
-      transporter = createTransporter(465, true);
-    } catch (e) {
-      transporter = createTransporter(587, false);
-    }
+  // Create Nodemailer Transporter using Gmail Service
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: smtpUser,
+      pass: smtpPass,
+    },
+    tls: {
+      rejectUnauthorized: false,
+    },
+  });
 
       // 1. Send Welcome Email to Subscriber
       await transporter.sendMail({
