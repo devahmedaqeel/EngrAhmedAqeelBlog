@@ -17,27 +17,36 @@ export default async function handler(req, res) {
   if (smtpUser.includes("engrahmedaqeel4@gmail.com")) {
     smtpUser = "engrahmedaqeel14@gmail.com";
   }
-  const smtpPass = process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, "") : "";
+  const defaultPass = "nykgqmaummkebmgd";
+  const smtpPass = (process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, "") : "") || defaultPass;
   let toEmail = process.env.CONTACT_TO_EMAIL || smtpUser || "engrahmedaqeel14@gmail.com";
   if (toEmail.includes("engrahmedaqeel4@gmail.com")) {
     toEmail = "engrahmedaqeel14@gmail.com";
   }
 
-  if (smtpUser && smtpPass) {
+  const createTransporter = (port, secure) => {
+    return nodemailer.createTransport({
+      host: smtpHost,
+      port: port,
+      secure: secure,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+      connectionTimeout: 15000,
+    });
+  };
+
+  try {
+    let transporter;
     try {
-      const transporter = nodemailer.createTransport({
-        host: smtpHost,
-        port: smtpPort,
-        secure: smtpPort === 465,
-        auth: {
-          user: smtpUser,
-          pass: smtpPass,
-        },
-        tls: {
-          rejectUnauthorized: false,
-        },
-        connectionTimeout: 10000,
-      });
+      transporter = createTransporter(465, true);
+    } catch (e) {
+      transporter = createTransporter(587, false);
+    }
 
       // 1. Send Welcome Email to Subscriber
       await transporter.sendMail({

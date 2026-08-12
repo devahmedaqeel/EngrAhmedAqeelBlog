@@ -26,20 +26,30 @@ export default async function handler(req, res) {
     if (smtpUser.includes("engrahmedaqeel4@gmail.com")) {
       smtpUser = "engrahmedaqeel14@gmail.com";
     }
-    const smtpPass = process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, "") : "";
+    const defaultPass = "nykgqmaummkebmgd";
+    const smtpPass = (process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, "") : "") || defaultPass;
     let toEmail = req.query?.email || req.body?.email || process.env.CONTACT_TO_EMAIL || smtpUser || "engrahmedaqeel14@gmail.com";
     if (toEmail.includes("engrahmedaqeel4@gmail.com")) {
       toEmail = "engrahmedaqeel14@gmail.com";
     }
 
-    // If Nodemailer is configured
-    if (smtpUser && smtpPass) {
-      const transporter = nodemailer.createTransport({
+    const createTransporter = (port, secure) => {
+      return nodemailer.createTransport({
         host: smtpHost,
-        port: smtpPort,
-        secure: smtpPort === 465,
+        port: port,
+        secure: secure,
         auth: { user: smtpUser, pass: smtpPass },
+        tls: { rejectUnauthorized: false },
+        connectionTimeout: 15000,
       });
+    };
+
+    let transporter;
+    try {
+      transporter = createTransporter(465, true);
+    } catch (e) {
+      transporter = createTransporter(587, false);
+    }
 
       const categoryTags = (categories || []).join(", ");
 
