@@ -1,5 +1,5 @@
 /* =============================================
-   NAVIGATION.SCSS — Premium Professional Header
+   NAVIGATION.SCSS — Spatial 3D & Neumorphic Header
    ============================================= */
 
 body.menu-open { overflow: hidden; }
@@ -10,33 +10,50 @@ body.menu-open { overflow: hidden; }
   top: 0;
   z-index: 100;
   width: 100%;
-  @apply border-b border-border;
-  background: rgba(252, 252, 253, 0.94);
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  padding: 0;
-  transition: box-shadow 0.3s ease, background 0.3s ease;
+  padding: 4px 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  background: rgba(244, 245, 249, 0.88);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 4px 20px rgba(166, 171, 189, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
 
   // Animated gradient top line
   &::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 2px;
+    height: 3px;
     background: linear-gradient(90deg, #6C63FF 0%, #a78bfa 50%, #6C63FF 100%);
     background-size: 200% 100%;
     animation: headerLineSlide 4s linear infinite;
+    box-shadow: 0 1px 6px rgba(108, 99, 255, 0.4);
   }
 
   &--scrolled {
-    box-shadow: 0 1px 20px rgba(0,0,0,0.08);
+    background: rgba(244, 245, 249, 0.95);
+    box-shadow: 
+      0 10px 30px rgba(166, 171, 189, 0.35),
+      inset 0 1px 1px rgba(255, 255, 255, 1);
   }
 }
 
 .dark .header {
-  @apply border-darkmode-border;
-  background: rgba(13, 12, 20, 0.94);
-  &--scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.4); }
+  background: rgba(12, 11, 22, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 6px 24px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+  &--scrolled {
+    background: rgba(12, 11, 22, 0.96);
+    box-shadow: 
+      0 12px 36px rgba(0, 0, 0, 0.75),
+      inset 0 1px 1px rgba(255, 255, 255, 0.12);
+  }
 }
 
 @keyframes headerLineSlide {
@@ -49,7 +66,7 @@ body.menu-open { overflow: hidden; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 56px;
+  height: 58px;
   position: relative;
 }
 
@@ -63,31 +80,45 @@ body.menu-open { overflow: hidden; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 34px;
-  width: 34px;
-  border-radius: 10px;
-  font-size: 12px;
+  height: 38px;
+  width: 38px;
+  border-radius: 12px;
+  font-size: 13px;
   font-weight: 900;
   letter-spacing: -0.02em;
   color: #fff;
   background: linear-gradient(135deg, #6C63FF 0%, #a78bfa 100%);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 14px rgba(108, 99, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 4px 0 #4f46e5,
+    0 8px 18px rgba(108, 99, 255, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
   flex-shrink: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 
   .navbar-brand:hover & {
-    transform: scale(1.06) rotate(-2deg);
-    box-shadow: 0 0 20px rgba(108, 99, 255, 0.6);
+    transform: translateY(-2px) scale(1.08) rotate(-3deg);
+    box-shadow: 
+      0 6px 0 #4f46e5,
+      0 12px 24px rgba(108, 99, 255, 0.6),
+      inset 0 1px 2px rgba(255, 255, 255, 0.8);
   }
 }
 
+.dark .logo-mark {
+  box-shadow: 
+    0 4px 0 #4338ca,
+    0 10px 22px rgba(129, 140, 248, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
 .logo-text {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: -0.03em;
   @apply text-dark dark:text-darkmode-light;
   transition: color 0.2s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .logo-text-gradient {
@@ -96,6 +127,7 @@ body.menu-open { overflow: hidden; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 900;
+  filter: drop-shadow(0 2px 4px rgba(108, 99, 255, 0.3));
 }
 
 // ── Nav links ────────────────────────────────
@@ -104,6 +136,7 @@ body.menu-open { overflow: hidden; }
   align-items: center;
   list-style: none;
   margin: 0; padding: 0;
+  gap: 4px;
 }
 
 .nav-item { position: relative; }
@@ -111,38 +144,76 @@ body.menu-open { overflow: hidden; }
 .nav-link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 6px 12px;
-  border-radius: 8px;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: 12px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
   @apply text-dark dark:text-darkmode-light;
-  transition: color 0.18s ease, background 0.18s ease;
+  transition: all 0.2s ease;
   position: relative;
   white-space: nowrap;
+  border: 1px solid transparent;
 
   &:hover {
     color: #6C63FF;
-    background: rgba(108, 99, 255, 0.07);
+    background-color: #f4f5f9;
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 
+      3px 3px 8px rgba(166, 171, 189, 0.3),
+      -3px -3px 8px rgba(255, 255, 255, 0.8),
+      inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
   }
 
   &.active {
     color: #6C63FF;
-    font-weight: 700;
-    background: rgba(108, 99, 255, 0.09);
+    font-weight: 800;
+    background-color: #eef0f8;
+    border-color: rgba(108, 99, 255, 0.2);
+    box-shadow: 
+      inset 2px 2px 5px rgba(166, 171, 189, 0.35),
+      inset -2px -2px 5px rgba(255, 255, 255, 0.9);
 
     // Active indicator dot
     &::after {
       content: '';
       position: absolute;
-      bottom: 4px;
+      bottom: 3px;
       left: 50%;
       transform: translateX(-50%);
-      width: 3px;
-      height: 3px;
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
       background: #6C63FF;
+      box-shadow: 0 0 6px #6C63FF;
+    }
+  }
+}
+
+.dark .nav-link {
+  &:hover {
+    color: #818cf8;
+    background-color: #141324;
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 
+      4px 4px 10px rgba(4, 3, 10, 0.7),
+      -3px -3px 8px rgba(35, 32, 60, 0.35),
+      inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    color: #818cf8;
+    background-color: #0e0d19;
+    border-color: rgba(129, 140, 248, 0.25);
+    box-shadow: 
+      inset 3px 3px 6px rgba(4, 3, 10, 0.8),
+      inset -2px -2px 5px rgba(35, 32, 60, 0.35);
+
+    &::after {
+      background: #818cf8;
+      box-shadow: 0 0 8px #818cf8;
     }
   }
 }
@@ -152,78 +223,174 @@ body.menu-open { overflow: hidden; }
 
 .nav-dropdown-list {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
-  min-width: 160px;
+  min-width: 170px;
   z-index: 200;
-  border-radius: 12px;
-  padding: 6px;
-  @apply bg-white dark:bg-darkmode-body border border-border dark:border-darkmode-border;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 8px;
+  background-color: #f4f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    10px 10px 25px rgba(166, 171, 189, 0.4),
+    -8px -8px 20px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(108, 99, 255, 0.15),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.dark .nav-dropdown-list {
+  background-color: #121120;
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    12px 12px 30px rgba(4, 3, 10, 0.85),
+    -8px -8px 22px rgba(35, 32, 60, 0.45),
+    0 0 25px rgba(129, 140, 248, 0.2),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.12);
 }
 
 .nav-dropdown-link {
   display: block;
-  padding: 7px 12px;
-  border-radius: 8px;
-  font-size: 12.5px;
-  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
   @apply text-dark dark:text-darkmode-light;
-  transition: all 0.15s ease;
+  transition: all 0.18s ease;
+
   &:hover, &.active {
     color: #6C63FF;
-    background: rgba(108, 99, 255, 0.08);
+    background-color: #eef0f8;
+    box-shadow: 
+      inset 2px 2px 5px rgba(166, 171, 189, 0.3),
+      inset -2px -2px 5px rgba(255, 255, 255, 0.9);
   }
 }
 
-// ── Icon buttons ─────────────────────────────
+.dark .nav-dropdown-link:hover,
+.dark .nav-dropdown-link.active {
+  color: #818cf8;
+  background-color: #0e0d19;
+  box-shadow: 
+    inset 3px 3px 6px rgba(4, 3, 10, 0.8),
+    inset -2px -2px 5px rgba(35, 32, 60, 0.35);
+}
+
+// ── 3D Icon Buttons ─────────────────────────────
 .nav-icon-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
   @apply text-dark dark:text-darkmode-light;
-  transition: all 0.18s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
   cursor: pointer;
-  border: none;
-  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: #f4f5f9;
+  box-shadow: 
+    3px 3px 8px rgba(166, 171, 189, 0.35),
+    -3px -3px 8px rgba(255, 255, 255, 0.85),
+    inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.9);
 
   &:hover {
     color: #6C63FF;
-    background: rgba(108, 99, 255, 0.09);
+    transform: translateY(-2px);
+    box-shadow: 
+      5px 5px 12px rgba(166, 171, 189, 0.45),
+      -4px -4px 10px rgba(255, 255, 255, 0.95),
+      0 0 10px rgba(108, 99, 255, 0.25);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 
+      inset 2px 2px 5px rgba(166, 171, 189, 0.4),
+      inset -2px -2px 5px rgba(255, 255, 255, 0.9);
   }
 }
 
-// ── Hire Me button ────────────────────────────
+.dark .nav-icon-btn {
+  background-color: #141324;
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    4px 4px 10px rgba(4, 3, 10, 0.75),
+    -3px -3px 8px rgba(35, 32, 60, 0.35),
+    inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.08);
+
+  &:hover {
+    color: #818cf8;
+    box-shadow: 
+      6px 6px 15px rgba(4, 3, 10, 0.85),
+      -4px -4px 10px rgba(35, 32, 60, 0.45),
+      0 0 12px rgba(129, 140, 248, 0.3);
+  }
+
+  &:active {
+    box-shadow: 
+      inset 3px 3px 6px rgba(4, 3, 10, 0.85),
+      inset -2px -2px 5px rgba(35, 32, 60, 0.35);
+  }
+}
+
+// ── Tactile 3D Extruded Hire Me button ────────────
 .hire-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 14px;
-  height: 32px;
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  padding: 0 16px;
+  height: 36px;
+  border-radius: 12px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
   color: #fff;
   background: linear-gradient(135deg, #6C63FF, #8B5CF6);
-  box-shadow: 0 2px 10px rgba(108, 99, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 3.5px 0 #4f46e5,
+    0 8px 18px rgba(108, 99, 255, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.5);
   transition: all 0.2s ease;
   white-space: nowrap;
   text-decoration: none;
 
   &:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(108, 99, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 
+      0 5px 0 #4f46e5,
+      0 12px 24px rgba(108, 99, 255, 0.5),
+      inset 0 1px 1.5px rgba(255, 255, 255, 0.65);
     color: #fff;
   }
+
   &:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(108, 99, 255, 0.3);
+    transform: translateY(2px);
+    box-shadow: 
+      0 1px 0 #4f46e5,
+      0 3px 8px rgba(108, 99, 255, 0.3);
+  }
+}
+
+.dark .hire-btn {
+  box-shadow: 
+    0 3.5px 0 #4338ca,
+    0 9px 22px rgba(129, 140, 248, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+
+  &:hover {
+    box-shadow: 
+      0 5px 0 #4338ca,
+      0 12px 26px rgba(129, 140, 248, 0.5),
+      inset 0 1px 1.5px rgba(255, 255, 255, 0.45);
+  }
+
+  &:active {
+    box-shadow: 
+      0 1px 0 #4338ca,
+      0 3px 10px rgba(129, 140, 248, 0.25);
   }
 }
 
@@ -237,33 +404,49 @@ body.menu-open { overflow: hidden; }
   position: fixed;
   top: 0; right: 0;
   z-index: 200;
-  width: min(300px, 85vw);
+  width: min(310px, 88vw);
   height: 100vh;
-  @apply bg-body dark:bg-darkmode-body border-l border-border dark:border-darkmode-border;
   padding: 24px 20px;
   overflow-y: auto;
   transform: translateX(100%);
-  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: -8px 0 40px rgba(0,0,0,0.12);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  background-color: #f4f5f9;
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    -12px 0 35px rgba(166, 171, 189, 0.4),
+    inset 1px 0 1px rgba(255, 255, 255, 0.9);
 
   &.open {
     transform: translateX(0);
   }
 }
 
+.dark .mobile-menu {
+  background-color: #121120;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    -14px 0 40px rgba(0, 0, 0, 0.8),
+    inset 1px 0 1px rgba(255, 255, 255, 0.08);
+}
+
 // ── Search modal ─────────────────────────────
 .search-modal {
-  @apply invisible absolute top-0 left-0 right-0 z-10 h-10 opacity-0 transition-all dark:bg-darkmode-body md:h-full;
-  background: rgba(252, 252, 253, 0.98);
-  backdrop-filter: blur(20px);
+  @apply invisible absolute top-0 left-0 right-0 z-10 h-12 opacity-0 transition-all md:h-full;
+  background: rgba(244, 245, 249, 0.98);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+
   .form-input {
-    @apply h-full w-full border-0 bg-transparent px-4 text-sm;
-    &:focus { outline: none; box-shadow: none; }
+    @apply h-full w-full border-0 bg-transparent px-4 text-sm font-semibold;
+    box-shadow: none !important;
+    &:focus { outline: none; box-shadow: none !important; }
   }
   .search-close { @apply absolute top-1/2 right-2 -translate-y-1/2 p-3; }
   &.open { @apply visible opacity-100; }
 }
 
 .dark .search-modal {
-  background: rgba(13, 12, 20, 0.98);
+  background: rgba(12, 11, 22, 0.98);
 }
+

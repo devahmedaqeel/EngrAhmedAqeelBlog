@@ -164,7 +164,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
             <div className="w-full text-center lg:w-[52%] lg:text-left">
 
               {/* Live Status Pill Badge */}
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 animate-fade-in-up">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 shadow-3d-raised animate-fade-in-up">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse-dot" />
                 Available for Contract &amp; Hiring
               </div>
@@ -174,9 +174,9 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
                 {markdownify(banner.title, "h1")}
               </div>
 
-              {/* Dynamic Role Rotator Badge (Zero Cut-Off) */}
-              <div className="mt-2 mb-4 h-8 flex items-center justify-center lg:justify-start animate-fade-in-up delay-200">
-                <span className="inline-flex items-center gap-1.5 rounded-lg border border-primary/25 bg-primary/10 px-3.5 py-1 text-xs sm:text-sm font-black uppercase tracking-wider text-primary">
+              {/* Dynamic Role Rotator Badge */}
+              <div className="mt-2 mb-4 h-9 flex items-center justify-center lg:justify-start animate-fade-in-up delay-200">
+                <span className="inline-flex items-center gap-1.5 rounded-xl border border-primary/30 bg-[#f4f5f9] dark:bg-[#121120] px-4 py-1.5 text-xs sm:text-sm font-black uppercase tracking-wider text-primary shadow-3d-pressed">
                   <span className="typing-cursor">{typedRole}</span>
                 </span>
               </div>
@@ -187,7 +187,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
               </p>
 
               {/* CTA Action Buttons */}
-              <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start animate-fade-in-up delay-400">
+              <div className="flex flex-wrap items-center justify-center gap-3.5 lg:justify-start animate-fade-in-up delay-400">
                 {banner.button.enable && (
                   <Link className="btn btn-primary group text-xs sm:text-sm py-2.5 px-5" href={banner.button.link} rel={banner.button.rel}>
                     {banner.button.label}
@@ -200,18 +200,18 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
               </div>
 
               {/* Metrics Stats */}
-              <div className="mt-8 flex justify-center gap-8 lg:justify-start animate-fade-in-up delay-500 border-t border-border dark:border-darkmode-border pt-6">
+              <div className="mt-8 flex justify-center gap-4 sm:gap-6 lg:justify-start animate-fade-in-up delay-500 border-t border-border/60 dark:border-darkmode-border/60 pt-6">
                 {[
                   { num: "10+",  label: "Projects Shipped" },
                   { num: "3+",   label: "Years Exp" },
                   { num: "100%", label: "Dedicated & Open" },
                 ].map((s, i) => (
-                  <div key={i} className="text-center lg:text-left">
+                  <div key={i} className="text-center lg:text-left rounded-2xl p-3 bg-[#f4f5f9] dark:bg-[#121120] shadow-3d-raised min-w-[105px]">
                     <div className="text-xl sm:text-2xl font-black tracking-tight"
                       style={{ background: "linear-gradient(135deg,#6C63FF,#a78bfa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                       {s.num}
                     </div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-light dark:text-darkmode-text mt-0.5">
+                    <div className="text-[9.5px] font-extrabold uppercase tracking-widest text-light dark:text-darkmode-text mt-0.5">
                       {s.label}
                     </div>
                   </div>
@@ -221,25 +221,24 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
 
             {/* ── Photo + Symmetrical Skill Badges ─────────────────────── */}
             {banner.image_enable && (
-              <div className="relative w-full lg:w-[48%] flex justify-center items-start pt-1 sm:pt-2 min-h-[350px] sm:min-h-[440px]">
+              <div className="relative w-full lg:w-[48%] flex justify-center items-start pt-1 sm:pt-2 min-h-[350px] sm:min-h-[440px] spatial-perspective">
 
-                {/* Symmetrical 8 Moving Skill Badges (Ultra-Compact scale-65 on Mobile) */}
+                {/* Symmetrical 8 Moving Skill Badges */}
                 {skills.map((sk, i) => (
                   <div
                     key={i}
-                    className={`absolute ${sk.pos} ${sk.anim} z-10 flex items-center gap-1 sm:gap-1.5 md:gap-2 rounded-lg md:rounded-xl border border-slate-200/90 dark:border-primary/40 bg-white/95 dark:bg-[#16152a]/95 px-1.5 py-0.5 sm:px-2 sm:py-1 md:px-3 md:py-1.5 shadow-md md:shadow-xl backdrop-blur-md transition-all duration-300 origin-center scale-[0.65] xs:scale-[0.75] sm:scale-90 md:scale-100 hover:scale-110 hover:border-primary/60`}
+                    className={`absolute ${sk.pos} ${sk.anim} z-10 flex items-center gap-1 sm:gap-1.5 md:gap-2 rounded-xl md:rounded-2xl border border-white/80 dark:border-white/10 bg-[#f4f5f9]/95 dark:bg-[#141324]/95 px-2 py-1 md:px-3 md:py-1.5 backdrop-blur-md transition-all duration-300 origin-center scale-[0.68] xs:scale-[0.78] sm:scale-90 md:scale-100 hover:scale-110 shadow-3d-raised`}
                     style={{
                       animationDelay: sk.delay,
-                      boxShadow: `0 0 12px ${sk.color}30, 0 4px 12px rgba(0,0,0,0.15)`,
                     }}
                   >
                     {/* Icon Badge */}
                     <div
-                      className="flex h-3.5 w-3.5 sm:h-5 sm:w-5 md:h-5.5 md:w-5.5 items-center justify-center rounded-md md:rounded-lg flex-shrink-0"
+                      className="flex h-4 w-4 sm:h-5 sm:w-5 md:h-5.5 md:w-5.5 items-center justify-center rounded-lg flex-shrink-0 shadow-sm"
                       style={{
                         background: sk.bg,
                         color: sk.color,
-                        boxShadow: `0 0 8px ${sk.color}60`,
+                        boxShadow: `0 0 10px ${sk.color}60`,
                       }}
                     >
                       {sk.icon}
@@ -255,7 +254,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
                     />
 
                     {/* Skill Label */}
-                    <span className="text-[8.5px] sm:text-[10px] md:text-[10.5px] font-black text-slate-900 dark:text-white whitespace-nowrap tracking-wide">
+                    <span className="text-[9px] sm:text-[10px] md:text-[11px] font-black text-dark dark:text-white whitespace-nowrap tracking-wide">
                       {sk.label}
                     </span>
                   </div>
@@ -263,12 +262,12 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
 
                 {/* Photos (Top-Aligned & Centered) */}
                 <ImageFallback
-                  className="dark:hidden relative z-[1] max-h-[350px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
+                  className="dark:hidden relative z-[1] max-h-[350px] sm:max-h-[470px] w-auto object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.15)]"
                   src="/images/author-light.png"
                   width={420} height={470} priority alt="Engr. Ahmed Aqeel"
                 />
                 <ImageFallback
-                  className="hidden dark:block relative z-[1] max-h-[350px] sm:max-h-[470px] w-auto object-contain drop-shadow-2xl"
+                  className="hidden dark:block relative z-[1] max-h-[350px] sm:max-h-[470px] w-auto object-contain filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)]"
                   src="/images/author-dark.png"
                   width={420} height={470} priority alt="Engr. Ahmed Aqeel"
                 />
@@ -276,6 +275,7 @@ const Home = ({ banner, posts, featured_posts, recent_posts, categories, promoti
             )}
           </div>
         </div>
+
       </section>
 
       {/* ════════════════════════ MAIN CONTENT ════════════════════════ */}

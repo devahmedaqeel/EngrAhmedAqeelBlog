@@ -71,21 +71,23 @@ const Sidebar = ({ posts, categories, className }) => {
         <div className="card py-4 px-4">
           <div className="flex items-center justify-between mb-3">
             <h4 className="section-title mb-0">Projects</h4>
-            <div className="flex rounded-lg overflow-hidden border border-border dark:border-darkmode-border">
+            <div className="flex rounded-xl p-0.5 bg-[#eef0f8] dark:bg-[#0e0d19] shadow-3d-pressed border border-black/5 dark:border-white/5">
               <button
-                className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider transition-colors"
-                style={!showRecent
-                  ? { background: "#6C63FF", color: "#fff" }
-                  : { background: "transparent", color: "#9898b3" }}
+                className={`px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider transition-all rounded-lg ${
+                  !showRecent
+                    ? "bg-gradient-to-r from-[#6C63FF] to-[#8B5CF6] text-white shadow-md"
+                    : "text-light dark:text-darkmode-text hover:text-dark dark:hover:text-white"
+                }`}
                 onClick={() => setShowRecent(false)}
               >
                 Top
               </button>
               <button
-                className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider transition-colors"
-                style={showRecent
-                  ? { background: "#6C63FF", color: "#fff" }
-                  : { background: "transparent", color: "#9898b3" }}
+                className={`px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider transition-all rounded-lg ${
+                  showRecent
+                    ? "bg-gradient-to-r from-[#6C63FF] to-[#8B5CF6] text-white shadow-md"
+                    : "text-light dark:text-darkmode-text hover:text-dark dark:hover:text-white"
+                }`}
                 onClick={() => setShowRecent(true)}
               >
                 New

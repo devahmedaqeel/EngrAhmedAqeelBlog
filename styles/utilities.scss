@@ -2,3 +2,44 @@ b,
 strong {
   @apply font-semibold;
 }
+
+// ── 3D & Spatial Neumorphic Utilities ───────────────────────
+.shadow-3d-raised {
+  box-shadow: 
+    6px 6px 14px rgba(166, 171, 189, 0.35),
+    -6px -6px 14px rgba(255, 255, 255, 0.85),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.dark .shadow-3d-raised {
+  box-shadow: 
+    8px 8px 18px rgba(4, 3, 10, 0.75),
+    -5px -5px 14px rgba(35, 32, 60, 0.35),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+.shadow-3d-pressed {
+  box-shadow: 
+    inset 3px 3px 6px rgba(166, 171, 189, 0.4),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+}
+
+.dark .shadow-3d-pressed {
+  box-shadow: 
+    inset 4px 4px 8px rgba(3, 3, 8, 0.85),
+    inset -3px -3px 8px rgba(32, 29, 55, 0.4);
+}
+
+.spatial-perspective {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.spatial-floating-layer {
+  transform: perspective(1000px) translateZ(12px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  &:hover {
+    transform: perspective(1000px) translateZ(24px) translateY(-3px);
+  }
+}
+
