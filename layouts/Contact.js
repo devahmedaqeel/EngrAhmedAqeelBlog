@@ -225,23 +225,47 @@ const Contact = ({ data }) => {
               </div>
 
               {submitted ? (
-                <div className="py-8 text-center animate-fade-in-up">
-                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-500">
-                    <FaCheckCircle className="text-2xl" />
+                <div className="py-10 text-center animate-fade-in-up">
+                  {/* Glowing Emerald Check Badge */}
+                  <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500 dark:text-emerald-400 shadow-[0_0_30px_rgba(16,185,129,0.35)] border border-emerald-500/30">
+                    <span className="absolute inset-0 rounded-full bg-emerald-500/10 animate-ping opacity-75" />
+                    <FaCheckCircle className="relative z-10 text-3xl" />
                   </div>
-                  <h4 className="text-base font-extrabold text-dark dark:text-darkmode-light mb-1">
+
+                  {/* Status Pill */}
+                  <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                    Email Delivered to Inbox
+                  </div>
+
+                  {/* Headline */}
+                  <h3 className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white mb-2">
                     Message Sent Successfully! 🎉
-                  </h4>
-                  <p className="text-xs text-text dark:text-darkmode-text mb-4 max-w-sm mx-auto leading-relaxed">
-                    Thank you for reaching out. Your message has been received, and Engr. Ahmed Aqeel will get back to you shortly.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={handleReset}
-                    className="btn btn-outline-primary btn-sm text-xs"
-                  >
-                    Send Another Message
-                  </button>
+                  </h3>
+
+                  {/* Detail Box */}
+                  <div className="mx-auto max-w-md rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-4 mb-6 backdrop-blur-md">
+                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                      Thank you for reaching out! Your message has been safely delivered to <strong>Engr. Ahmed Aqeel</strong>. You will receive an email response within <strong>1–2 hours</strong>.
+                    </p>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-wrap items-center justify-center gap-3">
+                    <button
+                      type="button"
+                      onClick={handleReset}
+                      className="btn btn-primary text-xs py-2.5 px-6 rounded-xl shadow-lg shadow-primary/25 transition-all hover:scale-105"
+                    >
+                      Send Another Message
+                    </button>
+                    <Link
+                      href="/posts"
+                      className="btn btn-outline-primary text-xs py-2.5 px-6 rounded-xl transition-all hover:scale-105"
+                    >
+                      Explore Projects &rarr;
+                    </Link>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">

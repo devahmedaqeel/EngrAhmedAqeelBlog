@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   }
 
   const smtpUser = process.env.SMTP_USER || "engrahmedaqeel14@gmail.com";
-  const defaultPass = "nykgqmaummkebmgd";
+  const defaultPass = "svgtgjzhnbqtqgdt";
   const smtpPass = (process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, "") : "") || defaultPass;
   let toEmail = process.env.CONTACT_TO_EMAIL || smtpUser || "engrahmedaqeel14@gmail.com";
   if (toEmail.includes("engrahmedaqeel4@gmail.com")) {
