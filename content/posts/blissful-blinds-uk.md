@@ -9,11 +9,21 @@ draft: false
 
 **Blissful Blinds UK** is a full-featured commercial website engineered for a UK-based business client, complete with custom quote forms, automated business email, customer reviews, chatbot integration, and technical SEO optimizations.
 
+### 🌐 Live Website & Links
+
+- 🔗 **Live Website URL:** [https://blissfulblinds.co.uk](https://blissfulblinds.co.uk)
+- 🚀 **Deployment Platform:** Vercel High-Speed Serverless Infrastructure
+- 📁 **GitHub Repository:** [github.com/devahmedaqeel](https://github.com/devahmedaqeel)
+
+---
+
 ### Tech Stack & Technologies
 
-- **Frontend & Web:** React.js, JavaScript, CSS3
-- **Backend Services:** Node.js, Nodemailer (Hostinger Email)
+- **Frontend & Web:** React.js, JavaScript, CSS3, Tailwind CSS
+- **Backend Services:** Node.js, Nodemailer (Hostinger SMTP Email)
 - **Deployment & SEO:** Vercel Hosting, Performance & On-Page SEO Optimization
+
+---
 
 ### Key Features
 

@@ -9,11 +9,21 @@ draft: false
 
 **DevOrbit Tech Website** is the official agency platform for DevOrbit Tech, founded by Engr. Ahmed Aqeel. It showcases full-stack web and mobile application development, AI solution architecture, graphic design services, and final-year project consultations.
 
+### 🌐 Live Website & Links
+
+- 🔗 **Official Agency Website:** [https://devorbit-tech.vercel.app](https://devorbit-tech.vercel.app)
+- 🚀 **Portfolio & Blog:** [https://engr-ahmed-aqeel-blog.vercel.app](https://engr-ahmed-aqeel-blog.vercel.app)
+- 📁 **GitHub Organization:** [github.com/devahmedaqeel](https://github.com/devahmedaqeel)
+
+---
+
 ### Tech Stack & Technologies
 
-- **Frontend:** React.js, Tailwind CSS
-- **Backend:** Node.js API
+- **Frontend:** React.js, Next.js, Tailwind CSS
+- **Backend:** Node.js API, Nodemailer
 - **Deployment:** Vercel
+
+---
 
 ### Key Features
 

@@ -9,11 +9,21 @@ draft: false
 
 **Personal Developer Portfolio Website** is an interactive, high-performance portfolio presenting Engr. Ahmed Aqeel's technical expertise, AI projects, software engineering background, achievements, and contact channels.
 
+### 🌐 Live Website & Source Code
+
+- 🔗 **Live Portfolio URL:** [https://engr-ahmed-aqeel-blog.vercel.app](https://engr-ahmed-aqeel-blog.vercel.app)
+- 📁 **Open Source Repository:** [github.com/devahmedaqeel/EngrAhmedAqeelBlog](https://github.com/devahmedaqeel/EngrAhmedAqeelBlog)
+- 🏢 **DevOrbit Tech Agency:** [https://devorbit-tech.vercel.app](https://devorbit-tech.vercel.app)
+
+---
+
 ### Tech Stack & Technologies
 
 - **Frontend Framework:** Next.js, React.js
 - **Styling:** Tailwind CSS, PostCSS
 - **Deployment:** Vercel
+
+---
 
 ### Key Features
 

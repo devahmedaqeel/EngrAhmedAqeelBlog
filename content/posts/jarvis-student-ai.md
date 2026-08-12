@@ -1,22 +1,32 @@
 ---
-title: "JARVIS Student AI - AI Study Productivity Companion"
+title: "Jarvis - AI Powered Student Assistant App"
 date: 2026-07-20T00:00:00Z
 image: /images/post/jarvis-student-ai.png
-categories: ["ai-ml", "mobile-apps"]
+categories: ["ai", "mobile-apps"]
 featured: true
 draft: false
 ---
 
-**JARVIS Student AI** is an intelligent study-productivity mobile application designed to streamline academic workflows for students through smart scheduling, AI note summarization, assignment tracking, and automated reminders.
+**Jarvis** is an AI-powered student assistant mobile app engineered with React Native and powered by LLMs (Google Gemini API / OpenAI API). It provides intelligent tutoring, automated note summarization, exam preparation, assignment drafting, and study planning.
+
+### 🌐 Live Application & Links
+
+- 📱 **Project Preview:** [https://engr-ahmed-aqeel-blog.vercel.app/posts/jarvis-student-ai](https://engr-ahmed-aqeel-blog.vercel.app/posts/jarvis-student-ai)
+- 📁 **GitHub Source Code:** [github.com/devahmedaqeel](https://github.com/devahmedaqeel)
+- 🏢 **Developed at:** DevOrbit Tech Studio ([devorbit-tech.vercel.app](https://devorbit-tech.vercel.app))
+
+---
 
 ### Tech Stack & Technologies
 
-- **Frontend & Mobile:** React Native
-- **AI Integration:** Google Gemini API
-- **Cloud Infrastructure:** Firebase Firestore & Auth
+- **Frontend / Mobile:** React Native, Expo, JavaScript
+- **AI Backend:** Google Gemini API, OpenAI GPT-4o, Python FastAPI
+- **Database & Storage:** Firebase Firestore, Async Storage
+
+---
 
 ### Key Features
 
-- **Smart Academic Planner:** Generates customized study schedules based on assignment due dates and upcoming exam schedules.
-- **AI Notes Assistant:** Summarizes lecture notes, textbook excerpts, and complex concepts instantly using Google Gemini LLM.
-- **Assignment Tracker & Reminders:** Keeps students organized with real-time push notifications and cloud synchronization across devices.
+- **AI Tutor & Q&A:** Instant solution generation for complex math, science, and coding questions.
+- **Smart Note Summarization:** Upload lecture slides or text to generate concise flashcards and bullet points.
+- **Exam Study Planner:** Personalized study schedules based on exam dates and course difficulty.
