@@ -225,29 +225,46 @@ const Contact = ({ data }) => {
               </div>
 
               {submitted ? (
-                <div className="py-10 text-center animate-fade-in-up">
-                  {/* Glowing Emerald Check Badge */}
-                  <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500 dark:text-emerald-400 shadow-[0_0_30px_rgba(16,185,129,0.35)] border border-emerald-500/30">
-                    <span className="absolute inset-0 rounded-full bg-emerald-500/10 animate-ping opacity-75" />
-                    <FaCheckCircle className="relative z-10 text-3xl" />
+                <div className="py-8 px-2 text-center animate-fade-in-up">
+                  {/* Glowing 3D Check Badge */}
+                  <div className="relative mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 text-white shadow-[0_10px_30px_rgba(16,185,129,0.4)] transition-transform hover:scale-105">
+                    <span className="absolute -inset-1 rounded-2xl bg-emerald-500/30 blur-md animate-pulse" />
+                    <FaCheckCircle className="relative z-10 text-4xl text-white" />
                   </div>
 
                   {/* Status Pill */}
-                  <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                    Email Delivered to Inbox
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 shadow-sm">
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-ping" />
+                    Delivered to engrahmedaqeel14@gmail.com
                   </div>
 
-                  {/* Headline */}
-                  <h3 className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white mb-2">
+                  {/* Main Title */}
+                  <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white mb-3">
                     Message Sent Successfully! 🎉
                   </h3>
 
-                  {/* Detail Box */}
-                  <div className="mx-auto max-w-md rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-4 mb-6 backdrop-blur-md">
-                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                      Thank you for reaching out! Your message has been safely delivered to <strong>Engr. Ahmed Aqeel</strong>. You will receive an email response within <strong>1–2 hours</strong>.
-                    </p>
+                  {/* Summary Card */}
+                  <div className="mx-auto max-w-md rounded-2xl border border-slate-200/80 dark:border-primary/25 bg-gradient-to-b from-white/90 to-slate-50/90 dark:from-[#1a1936]/90 dark:to-[#14132a]/90 p-5 mb-7 shadow-xl backdrop-blur-xl text-left space-y-3">
+                    <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary font-bold flex-shrink-0">⚡</span>
+                      <div>
+                        <span className="font-bold text-slate-900 dark:text-white">Response Time:</span> Within <strong>1–2 Hours</strong>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-200 border-t border-slate-100 dark:border-white/5 pt-2.5">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500 font-bold flex-shrink-0">📧</span>
+                      <div>
+                        <span className="font-bold text-slate-900 dark:text-white">Auto-Reply Sent:</span> Check your inbox for confirmation
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-200 border-t border-slate-100 dark:border-white/5 pt-2.5">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500 font-bold flex-shrink-0">📍</span>
+                      <div>
+                        <span className="font-bold text-slate-900 dark:text-white">Location:</span> Kotli, Azad Jammu &amp; Kashmir, Pakistan
+                      </div>
+                    </div>
                   </div>
 
                   {/* Action Buttons */}
@@ -255,15 +272,15 @@ const Contact = ({ data }) => {
                     <button
                       type="button"
                       onClick={handleReset}
-                      className="btn btn-primary text-xs py-2.5 px-6 rounded-xl shadow-lg shadow-primary/25 transition-all hover:scale-105"
+                      className="btn btn-primary text-xs sm:text-sm py-3 px-7 rounded-xl shadow-lg shadow-primary/30 transition-all hover:scale-105 font-bold"
                     >
                       Send Another Message
                     </button>
                     <Link
                       href="/posts"
-                      className="btn btn-outline-primary text-xs py-2.5 px-6 rounded-xl transition-all hover:scale-105"
+                      className="btn btn-outline-primary text-xs sm:text-sm py-3 px-7 rounded-xl transition-all hover:scale-105 font-bold"
                     >
-                      Explore Projects &rarr;
+                      Browse Projects &rarr;
                     </Link>
                   </div>
                 </div>
