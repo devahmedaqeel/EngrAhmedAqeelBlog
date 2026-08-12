@@ -12,12 +12,12 @@ export default async function handler(req, res) {
       console.warn("Serverless fs fallback:", fsErr.message);
       posts = [
         {
-          slug: "blissful-blinds-uk",
+          slug: "meta-react-native-certification",
           frontmatter: {
-            title: "Blissful Blinds UK - Client Business E-Commerce Site",
-            description: "Blissful Blinds UK is a full-featured commercial website engineered for a UK-based business client.",
-            categories: ["client-work", "web-development"],
-            image: "/images/post/blissful-blinds-uk.png",
+            title: "Official Meta React Native Professional Certification Achieved!",
+            description: "Engr. Ahmed Aqeel has officially earned the Meta React Native Certification verified on Coursera (Credential ID: VMI5AHPW66BK).",
+            categories: ["certifications", "mobile-apps", "react-native"],
+            image: "/images/post/jarvis-student-ai.png",
           },
         },
       ];
