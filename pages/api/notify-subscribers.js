@@ -1,6 +1,8 @@
 import config from "@config/config.json";
 import { getSinglePage } from "@lib/contentParser";
 import nodemailer from "nodemailer";
+import fs from "fs";
+import path from "path";
 
 export default async function handler(req, res) {
   try {
@@ -37,9 +39,25 @@ export default async function handler(req, res) {
     const smtpUser = process.env.SMTP_USER || "engrahmedaqeel14@gmail.com";
     const defaultPass = "svgtgjzhnbqtqgdt";
     const smtpPass = (process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, "") : "") || defaultPass;
-    let toEmail = req.query?.email || req.body?.email || process.env.CONTACT_TO_EMAIL || smtpUser || "engrahmedaqeel14@gmail.com";
-    if (toEmail.includes("engrahmedaqeel4@gmail.com")) {
-      toEmail = "engrahmedaqeel14@gmail.com";
+
+    let recipients = ["chahmedaqeel53@gmail.com", "engrahmedaqeel14@gmail.com", "engrahmedaqeel99@gmail.com"];
+    
+    if (req.query?.email) {
+      recipients = [req.query.email];
+    } else if (req.body?.email) {
+      recipients = Array.isArray(req.body.email) ? req.body.email : [req.body.email];
+    } else {
+      try {
+        const subFilePath = path.join(process.cwd(), "config", "subscribers.json");
+        if (fs.existsSync(subFilePath)) {
+          const loadedSubs = JSON.parse(fs.readFileSync(subFilePath, "utf-8"));
+          if (Array.isArray(loadedSubs) && loadedSubs.length > 0) {
+            recipients = Array.from(new Set([...recipients, ...loadedSubs]));
+          }
+        }
+      } catch (err) {
+        console.warn("Could not read subscribers.json file:", err.message);
+      }
     }
 
     const transporter = nodemailer.createTransport({
@@ -59,7 +77,7 @@ export default async function handler(req, res) {
       <div style="font-family: Arial, sans-serif; padding: 24px; color: #1a1a2e; max-width: 620px; border: 1px solid #e8e8f0; border-radius: 16px; margin: auto; background: #ffffff;">
         <div style="text-align: center; margin-bottom: 16px;">
           <span style="background: rgba(108,99,255,0.12); color: #6C63FF; padding: 6px 16px; border-radius: 20px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
-            🚀 New Project &amp; Blog Update Published
+            🎓 New Certification &amp; Blog Update Published
           </span>
         </div>
 
@@ -70,14 +88,14 @@ export default async function handler(req, res) {
         ${image ? `<div style="text-align: center; margin: 20px 0;"><a href="${postUrl}"><img src="${siteUrl}${image}" alt="${title}" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);" /></a></div>` : ""}
 
         <p style="font-size: 14px; line-height: 1.6; color: #4a4a6a; margin-top: 15px;">
-          ${description || "A new project case study and technical breakdown is live on Engr. Ahmed Aqeel's portfolio website!"}
+          ${description || "A new technical achievement and blog article is live on Engr. Ahmed Aqeel's portfolio website!"}
         </p>
 
         ${categoryTags ? `<p style="font-size: 12px; color: #6C63FF; font-weight: bold; margin-top: 10px;">🏷️ Topics: ${categoryTags}</p>` : ""}
 
         <div style="text-align: center; margin-top: 25px; margin-bottom: 20px;">
           <a href="${postUrl}" style="background: linear-gradient(135deg, #6C63FF, #8B5CF6); color: #ffffff; text-decoration: none; padding: 13px 30px; border-radius: 10px; font-size: 13px; font-weight: 800; display: inline-block; box-shadow: 0 4px 16px rgba(108,99,255,0.35);">
-            📖 Read Full Project &amp; Article &rarr;
+            📖 Read Full Article &amp; Verify Credential &rarr;
           </a>
         </div>
 
@@ -96,17 +114,26 @@ export default async function handler(req, res) {
       </div>
     `;
 
-    await transporter.sendMail({
-      from: `"Engr. Ahmed Aqeel" <${smtpUser}>`,
-      to: toEmail,
-      subject: `🚀 New Project Published: ${title}`,
-      html: htmlContent,
-    });
+    const sendResults = [];
+    for (const targetEmail of recipients) {
+      try {
+        await transporter.sendMail({
+          from: `"Engr. Ahmed Aqeel" <${smtpUser}>`,
+          to: targetEmail,
+          subject: `🎓 New Certification: ${title}`,
+          html: htmlContent,
+        });
+        sendResults.push({ email: targetEmail, status: "sent" });
+      } catch (sendErr) {
+        sendResults.push({ email: targetEmail, status: "error", error: sendErr.message });
+      }
+    }
 
     return res.status(200).json({
       success: true,
       message: `Notification broadcast sent successfully for "${title}"!`,
       latestPost: { title, slug, postUrl },
+      results: sendResults,
     });
   } catch (error) {
     console.error("Subscriber notification error:", error);
