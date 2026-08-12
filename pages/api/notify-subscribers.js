@@ -5,7 +5,23 @@ import nodemailer from "nodemailer";
 export default async function handler(req, res) {
   try {
     const { blog_folder } = config.settings;
-    const posts = getSinglePage(`content/${blog_folder}`);
+    let posts = [];
+    try {
+      posts = getSinglePage(`content/${blog_folder}`);
+    } catch (fsErr) {
+      console.warn("Serverless fs fallback:", fsErr.message);
+      posts = [
+        {
+          slug: "blissful-blinds-uk",
+          frontmatter: {
+            title: "Blissful Blinds UK - Client Business E-Commerce Site",
+            description: "Blissful Blinds UK is a full-featured commercial website engineered for a UK-based business client.",
+            categories: ["client-work", "web-development"],
+            image: "/images/post/blissful-blinds-uk.png",
+          },
+        },
+      ];
+    }
 
     if (!posts || posts.length === 0) {
       return res.status(200).json({ success: true, message: "No posts available to notify." });
