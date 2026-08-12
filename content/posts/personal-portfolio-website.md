@@ -3,7 +3,7 @@ title: "Personal Developer Portfolio Website"
 date: 2026-01-15T00:00:00Z
 image: /images/post/personal-portfolio-website.png
 categories: ["portfolio", "web-development"]
-featured: false
+featured: true
 draft: false
 ---
 
@@ -11,7 +11,8 @@ draft: false
 
 ### 🌐 Live Website & Source Code
 
-- 🔗 **Live Portfolio URL:** [https://engr-ahmed-aqeel-blog.vercel.app](https://engr-ahmed-aqeel-blog.vercel.app)
+- 🔗 **Primary Portfolio Website:** [https://ahmedaqeelportfolio.vercel.app](https://ahmedaqeelportfolio.vercel.app)
+- 🌐 **Blog & Portfolio Mirror:** [https://engr-ahmed-aqeel-blog.vercel.app](https://engr-ahmed-aqeel-blog.vercel.app)
 - 📁 **Open Source Repository:** [github.com/devahmedaqeel/EngrAhmedAqeelBlog](https://github.com/devahmedaqeel/EngrAhmedAqeelBlog)
 - 🏢 **DevOrbit Tech Agency:** [https://devorbit-tech.vercel.app](https://devorbit-tech.vercel.app)
 

@@ -55,6 +55,7 @@ For AI and document processing workflows, I design and deploy end-to-end intelli
 
 ### Key Technical Achievements
 
+- 🌐 **Personal Portfolio Domain:** [https://ahmedaqeelportfolio.vercel.app](https://ahmedaqeelportfolio.vercel.app) (Blog Mirror: [engr-ahmed-aqeel-blog.vercel.app](https://engr-ahmed-aqeel-blog.vercel.app))
 - 🎓 **Meta React Native Professional Certificate (Coursera):** Officially certified by **Meta (Facebook)** in cross-platform mobile application engineering. Credential ID: `VMI5AHPW66BK` — [Verify on Coursera](https://www.coursera.org/account/accomplishments/verify/VMI5AHPW66BK)
 - Founded **DevOrbit Tech** and successfully architected, built, and delivered over **10 full-stack and AI-powered applications** for clients and end-users.
 - Developed an automated **OCR + LLM document extraction pipeline** for medical lab report analysis and structured data conversion.
